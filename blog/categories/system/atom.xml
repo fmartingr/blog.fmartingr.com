@@ -4,7 +4,7 @@
   <title><![CDATA[Category: system | Felipe Martín]]></title>
   <link href="http://blog.fmartingr.com/blog/categories/system/atom.xml" rel="self"/>
   <link href="http://blog.fmartingr.com/"/>
-  <updated>2013-02-27T22:27:30+01:00</updated>
+  <updated>2013-02-27T22:52:48+01:00</updated>
   <id>http://blog.fmartingr.com/</id>
   <author>
     <name><![CDATA[Felipe]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Server going slow after IPTables configuration? Try this]]></title>
-    <link href="http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/"/>
-    <updated>2013-04-27T22:45:00+02:00</updated>
-    <id>http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this</id>
+    <link href="http://blog.fmartingr.com/2013/02/27/20-00-server-going-slow-after-iptables-configuration-try-this/"/>
+    <updated>2013-02-27T21:45:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/02/27/20-00-server-going-slow-after-iptables-configuration-try-this</id>
     <content type="html"><![CDATA[<p>Recently I've started the migration of my company's servers to a new provider. After checking that the OS installed on the -now- old servers was Ubuntu 8.04 (holy shit), I decided to make a fresh install of CentOS 6.3, cleaning up all the servers contents and setting up everything from scratch.</p>
 
 <p>After setting my iptables rules (INPUT whitelisted, OUTPUT accept all) I noticed a big delay on every connection made to my server. After checking a lot of things, these two solved the issue:</p>
