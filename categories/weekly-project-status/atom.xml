@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Weekly project status | Felipe Martín]]></title>
-  <link href="http://fmartingr.github.com/blog/blog/categories/weekly-project-status/atom.xml" rel="self"/>
-  <link href="http://fmartingr.github.com/blog/"/>
-  <updated>2013-02-27T22:16:43+01:00</updated>
-  <id>http://fmartingr.github.com/blog/</id>
+  <link href="http://blog.fmartingr.com//blog/categories/weekly-project-status/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com//"/>
+  <updated>2013-02-27T22:18:10+01:00</updated>
+  <id>http://blog.fmartingr.com//</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Weekly project status: Dropping projects is hard]]></title>
-    <link href="http://fmartingr.github.com/blog/2013/01/12/weekly-project-status-dropping-projects-is-hard/"/>
+    <link href="http://blog.fmartingr.com//2013/01/12/weekly-project-status-dropping-projects-is-hard/"/>
     <updated>2013-01-12T00:00:00+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2013/01/12/weekly-project-status-dropping-projects-is-hard</id>
+    <id>http://blog.fmartingr.com//2013/01/12/weekly-project-status-dropping-projects-is-hard</id>
     <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/global/weekly-project-status-banner.jpg">
 Since I wrote <a href="/2012/12/31/2013/">the last post of 2012</a> I have been wondering if I could finish -or at least, work- on all the projects or experiments I wanted to. The answer was easy: <strong>no</strong>. I just don't have enough time for all the stuff I want to do, so I have made some decisions about my projects.</p>
 

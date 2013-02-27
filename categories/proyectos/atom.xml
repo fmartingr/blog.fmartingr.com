@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Proyectos | Felipe Martín]]></title>
-  <link href="http://fmartingr.github.com/blog/blog/categories/proyectos/atom.xml" rel="self"/>
-  <link href="http://fmartingr.github.com/blog/"/>
-  <updated>2013-02-27T22:16:43+01:00</updated>
-  <id>http://fmartingr.github.com/blog/</id>
+  <link href="http://blog.fmartingr.com//blog/categories/proyectos/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com//"/>
+  <updated>2013-02-27T22:18:10+01:00</updated>
+  <id>http://blog.fmartingr.com//</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[jquery-phslider]]></title>
-    <link href="http://fmartingr.github.com/blog/2012/04/21/jquery-phslider/"/>
+    <link href="http://blog.fmartingr.com//2012/04/21/jquery-phslider/"/>
     <updated>2012-04-21T12:47:08+02:00</updated>
-    <id>http://fmartingr.github.com/blog/2012/04/21/jquery-phslider</id>
+    <id>http://blog.fmartingr.com//2012/04/21/jquery-phslider</id>
     <content type="html"><![CDATA[<p><img src="http://cdn.fmartingr.com/blog/uploads/2012/04/jquery-phslider-header.gif" alt="" /></p>
 
 <p>Ayer me encontré en la situación de tener que crear un slider sencillo para un site y al terminarlo me di cuenta de que tal vez podía servirle a alguien, así que siguiendo el camino del <strong>open source</strong> he subido mi pequeña creación a github.</p>

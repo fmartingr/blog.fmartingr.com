@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Desarrollo web | Felipe Martín]]></title>
-  <link href="http://fmartingr.github.com/blog/blog/categories/desarrollo-web/atom.xml" rel="self"/>
-  <link href="http://fmartingr.github.com/blog/"/>
-  <updated>2013-02-27T22:16:43+01:00</updated>
-  <id>http://fmartingr.github.com/blog/</id>
+  <link href="http://blog.fmartingr.com//blog/categories/desarrollo-web/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com//"/>
+  <updated>2013-02-27T22:18:10+01:00</updated>
+  <id>http://blog.fmartingr.com//</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Policy de S3 para tener un bucket con acceso lectura público]]></title>
-    <link href="http://fmartingr.github.com/blog/2012/11/23/policy-de-s3-para-tener-un-bucket-con-acceso-lectura-publico/"/>
+    <link href="http://blog.fmartingr.com//2012/11/23/policy-de-s3-para-tener-un-bucket-con-acceso-lectura-publico/"/>
     <updated>2012-11-23T11:36:42+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2012/11/23/policy-de-s3-para-tener-un-bucket-con-acceso-lectura-publico</id>
+    <id>http://blog.fmartingr.com//2012/11/23/policy-de-s3-para-tener-un-bucket-con-acceso-lectura-publico</id>
     <content type="html"><![CDATA[<p>Después de haber migrado el blog a un servicio PaaS -que ya comentaré en otra entrada-, tuve el problemilla de que el espacio en disco era volatil y tenía que guardar las imágenes y demás en un servidor o CDN a parte. Ya puestos, a tirar la casa por la ventana, decidí usar S3.</p>
 
 <p>Creé un bucket que voy a usar como CDN a partir de ahora, pero trasteando vi que los permisos había que incluirlos por fichero, lo cual era un engorro. Investigando encontré las Policy, que son cadenas JSON puedes indicar propiedades a todo el Bucket.</p>
@@ -54,9 +54,9 @@
   
   <entry>
     <title type="html"><![CDATA[Organizar nuestros modelos de django en carpetas]]></title>
-    <link href="http://fmartingr.github.com/blog/2012/06/28/organizar-nuestros-modelos-de-django-en-carpetas/"/>
+    <link href="http://blog.fmartingr.com//2012/06/28/organizar-nuestros-modelos-de-django-en-carpetas/"/>
     <updated>2012-06-28T06:23:14+02:00</updated>
-    <id>http://fmartingr.github.com/blog/2012/06/28/organizar-nuestros-modelos-de-django-en-carpetas</id>
+    <id>http://blog.fmartingr.com//2012/06/28/organizar-nuestros-modelos-de-django-en-carpetas</id>
     <content type="html"><![CDATA[<p><img class="left" src="http://cdn.fmartingr.com/blog/uploads/2012/06/django-model-folder-example.png">
 Estaba yo aquí con mi insomnio habitual (¡y sin café de por medio!) trasteando con django un poco cuando me he dado cuenta de que mi ficherico <em>models.py</em> se me estaba haciendo <del>algo</del> muy incómodo de mantener, y yo que estaba pensando un poco que python es muy <em>másmola</em> y tal. Alguna manera ha de haber de mejorar esta cosa.</p>
 
@@ -97,9 +97,9 @@ from database.model.item import Item</p>
   
   <entry>
     <title type="html"><![CDATA[jquery-phslider]]></title>
-    <link href="http://fmartingr.github.com/blog/2012/04/21/jquery-phslider/"/>
+    <link href="http://blog.fmartingr.com//2012/04/21/jquery-phslider/"/>
     <updated>2012-04-21T12:47:08+02:00</updated>
-    <id>http://fmartingr.github.com/blog/2012/04/21/jquery-phslider</id>
+    <id>http://blog.fmartingr.com//2012/04/21/jquery-phslider</id>
     <content type="html"><![CDATA[<p><img src="http://cdn.fmartingr.com/blog/uploads/2012/04/jquery-phslider-header.gif" alt="" /></p>
 
 <p>Ayer me encontré en la situación de tener que crear un slider sencillo para un site y al terminarlo me di cuenta de que tal vez podía servirle a alguien, así que siguiendo el camino del <strong>open source</strong> he subido mi pequeña creación a github.</p>
@@ -119,9 +119,9 @@ from database.model.item import Item</p>
   
   <entry>
     <title type="html"><![CDATA[Crear una imagen y su reflejo con HTML y CSS3]]></title>
-    <link href="http://fmartingr.github.com/blog/2012/04/13/crear-una-imagen-y-su-reflejo-con-html-y-css3/"/>
+    <link href="http://blog.fmartingr.com//2012/04/13/crear-una-imagen-y-su-reflejo-con-html-y-css3/"/>
     <updated>2012-04-13T01:10:36+02:00</updated>
-    <id>http://fmartingr.github.com/blog/2012/04/13/crear-una-imagen-y-su-reflejo-con-html-y-css3</id>
+    <id>http://blog.fmartingr.com//2012/04/13/crear-una-imagen-y-su-reflejo-con-html-y-css3</id>
     <content type="html"><![CDATA[<p><img src="http://cdn.fmartingr.com/blog/uploads/2012/04/css3-reflection.png" alt="Prueba de reflejo con CSS3" /></p>
 
 <p><strong>Disclaimer:</strong> Se que esto no es una gran hazaña y que hay burradas de la leche con CSS3, que esto se podrá hacer de otra manera, etc. No soy diseñador, así que dejadme tranquilo. (XD)</p>

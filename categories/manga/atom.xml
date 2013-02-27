@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Manga | Felipe Martín]]></title>
-  <link href="http://fmartingr.github.com/blog/blog/categories/manga/atom.xml" rel="self"/>
-  <link href="http://fmartingr.github.com/blog/"/>
-  <updated>2013-02-27T22:16:43+01:00</updated>
-  <id>http://fmartingr.github.com/blog/</id>
+  <link href="http://blog.fmartingr.com//blog/categories/manga/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com//"/>
+  <updated>2013-02-27T22:18:10+01:00</updated>
+  <id>http://blog.fmartingr.com//</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Manga recommendation: Psyren]]></title>
-    <link href="http://fmartingr.github.com/blog/2013/02/23/manga-recommendation-psyren/"/>
+    <link href="http://blog.fmartingr.com//2013/02/23/manga-recommendation-psyren/"/>
     <updated>2013-02-23T22:00:00+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2013/02/23/manga-recommendation-psyren</id>
+    <id>http://blog.fmartingr.com//2013/02/23/manga-recommendation-psyren</id>
     <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/02/psyren-cover.png" title="&#34;Psyren&#34;" alt="&#34;Psyren&#34;"></p>
 
 <h3>Summary</h3>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Manga Recommendation: Kamisama no Iutoori (Fujimura Akeji)]]></title>
-    <link href="http://fmartingr.github.com/blog/2013/01/20/manga-recommendation-kamisama-no-iutoori/"/>
+    <link href="http://blog.fmartingr.com//2013/01/20/manga-recommendation-kamisama-no-iutoori/"/>
     <updated>2013-01-20T21:00:00+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2013/01/20/manga-recommendation-kamisama-no-iutoori</id>
+    <id>http://blog.fmartingr.com//2013/01/20/manga-recommendation-kamisama-no-iutoori</id>
     <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/kamisama-no-iutoori.jpg" title="&#34;Kamisama no Iutoori (FUJIMURA Akeji)&#34;" alt="&#34;Kamisama no Iutoori (FUJIMURA Akeji)&#34;"></p>
 
 <h3>Summary</h3>

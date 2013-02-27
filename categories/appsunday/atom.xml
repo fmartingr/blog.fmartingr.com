@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: AppSunday | Felipe Martín]]></title>
-  <link href="http://fmartingr.github.com/blog/blog/categories/appsunday/atom.xml" rel="self"/>
-  <link href="http://fmartingr.github.com/blog/"/>
-  <updated>2013-02-27T22:16:43+01:00</updated>
-  <id>http://fmartingr.github.com/blog/</id>
+  <link href="http://blog.fmartingr.com//blog/categories/appsunday/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com//"/>
+  <updated>2013-02-27T22:18:10+01:00</updated>
+  <id>http://blog.fmartingr.com//</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#AppSunday: Arq]]></title>
-    <link href="http://fmartingr.github.com/blog/2013/01/20/appsunday-arq/"/>
+    <link href="http://blog.fmartingr.com//2013/01/20/appsunday-arq/"/>
     <updated>2013-01-20T16:30:00+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2013/01/20/appsunday-arq</id>
+    <id>http://blog.fmartingr.com//2013/01/20/appsunday-arq</id>
     <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/main-screen.png" title="&#34;Main ARQ 2 Screen&#34;" alt="&#34;Main ARQ 2 Screen&#34;"></p>
 
 <p>Have you ever heard of <em>TimeMachine</em>? That Apple app that makes backups of your hard drive with a really nice interface to restore backups from finder. Well, Arq is that but without the nice interface and the backups are made to Amazon S3 instead of an external hard drive.</p>
@@ -45,9 +45,9 @@
   
   <entry>
     <title type="html"><![CDATA[#AppSunday: AppCleaner]]></title>
-    <link href="http://fmartingr.github.com/blog/2013/01/13/appsunday-appcleaner/"/>
+    <link href="http://blog.fmartingr.com//2013/01/13/appsunday-appcleaner/"/>
     <updated>2013-01-13T19:00:00+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2013/01/13/appsunday-appcleaner</id>
+    <id>http://blog.fmartingr.com//2013/01/13/appsunday-appcleaner</id>
     <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-appcleaner/main-interface.png" title="&#34;Main Interface&#34;" alt="&#34;Main Interface&#34;"></p>
 
 <p>If I hate something about uninstalling apps is all the rubbish that is left behind. Windows had that problem and unfortunately OS X have the same curse, but there's some apps that help you removing all that files/folders used for whatever purpose they are. The one that I use its called <strong>AppCleaner</strong> and its freeware.</p>
@@ -70,9 +70,9 @@ You also have a paid alternative called <a href="http://www.appzapper.com/">AppZ
   
   <entry>
     <title type="html"><![CDATA[#AppSunday: SublimeText 2]]></title>
-    <link href="http://fmartingr.github.com/blog/2013/01/06/appsunday-sublimetext2/"/>
+    <link href="http://blog.fmartingr.com//2013/01/06/appsunday-sublimetext2/"/>
     <updated>2013-01-06T12:00:00+01:00</updated>
-    <id>http://fmartingr.github.com/blog/2013/01/06/appsunday-sublimetext2</id>
+    <id>http://blog.fmartingr.com//2013/01/06/appsunday-sublimetext2</id>
     <content type="html"><![CDATA[<blockquote><p>Welcome to #AppSunday, my little weekly space on the blog to review and explore applications I use in my day to day.</p></blockquote>
 
 <p>As promised, welcome to the first <em>#AppSunday</em> of the year. This time I will look into <strong>SublimeText 2</strong>, a very good developing app you all will probably know already.</p>
