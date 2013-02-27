@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Server going slow after IPTables configuration? Try this - Felipe Martín</title>
+  <meta name="author" content="Felipe">
+
+  
+  <meta name="description" content="Recently I&#8217;ve started the migration of my company&#8217;s servers to a new provider. After checking that the OS installed on the -now- old &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <link href="/atom.xml" rel="alternate" title="Felipe Martín" type="application/atom+xml">
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-274435-11']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body >
+	<div class="all">
+		<section class="sidebar align-center">
+			<header>
+				<a href="/">
+	<div class="profile_picture"></div>
+	<h1>Felipe Martín</h1>
+</a>
+<div class="slogan hide-mobile">
+	Be incomprehensible.<br />
+	If they can't understand, <br />
+	they can't disagree.
+</div>
+<div class="social">
+	<a href="http://twitter.com/fmartingr">
+		<div class="button twitter">
+			<span class="icon-twitter"></span>
+		</div>
+	</a>
+	<a href="http://www.linkedin.com/in/felipemartingarcia">
+		<div class="button linkedin">
+			<span class="icon-linkedin"></span>
+		</div>
+	</a>
+	<a href="http://last.fm/user/pyronhell">
+		<div class="button lastfm">
+			<span class="icon-lastfm"></span>
+		</div>
+	</a>
+	<a href="http://github.com/fmartingr">
+		<div class="button github">
+			<span class="icon-github"></span>
+		</div>
+	</a>
+	<a href="mailto:me@fmartingr.com">
+		<div class="button email">
+			<span class="icon-envelope"></span>
+		</div>
+	</a>
+	<a href="/atom.xml">
+		<div class="button rss">
+			<span class="icon-rss"></span>
+		</div>
+	</a>
+</div>
+<!--
+<div class="links">
+	<a href="http://fmartingr.github.com/">
+		<div class="button auto github">
+			<span class="icon-github"></span> Github projects
+		</div>
+	</a>
+</div>
+-->
+
+			</header>
+		</section>
+		<section class="content">
+			<div class="wrapper">
+				<div>
+<article class="hentry" role="article">
+  <div class="title">
+    
+      <h1 class="entry-title">Server going slow after IPTables configuration? Try this</h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-27T22:45:00+02:00" pubdate data-updated="true">2013-04-27</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+  <div class="entry-content"><p>Recently I&#8217;ve started the migration of my company&#8217;s servers to a new provider. After checking that the OS installed on the -now- old servers was Ubuntu 8.04 (holy shit), I decided to make a fresh install of CentOS 6.3, cleaning up all the servers contents and setting up everything from scratch.</p>
+
+<p>After setting my iptables rules (INPUT whitelisted, OUTPUT accept all) I noticed a big delay on every connection made to my server. After checking a lot of things, these two solved the issue:</p>
+
+<h2>Enable unilimited traffic on your loopback interface</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>iptables -A INPUT -i lo  -j ACCEPT
+</span><span class='line'>iptables -A OUTPUT -o lo -j ACCEPT
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Enable traffic for connections started by your server</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hope this helps!</p>
+</div>
+  
+</div>
+
+  
+    <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/" data-via="fmartingr" data-counturl="http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+  
+    <div class="post_paginator">
+    
+    
+      <a class="basic-alignment left" href="/2013/02/24/fringe-series-finale-my-oppinion/" title="Previous Post: Fringe series finale: My opinion">&laquo; Fringe series finale: My opinion</a>
+    
+  </div>
+</article>
+<hr class="clear-both" />
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+			</div>
+		</section>
+		<footer class="align-center">
+			<div class="license">
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+</div>
+<div class="powered-by">
+	<a href="http://github.com">Github</a> &amp; <a href="http://octopress.org/">Octopress</a>
+</div>
+
+		</footer>
+	</div>
+<script src="/javascripts/site.js"></script>
+<script> updateSizes(); </script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'fmartingr';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/';
+        var disqus_url = 'http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

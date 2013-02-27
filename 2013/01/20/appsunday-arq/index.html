@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>#AppSunday: Arq - Felipe Martín</title>
+  <meta name="author" content="Felipe">
+
+  
+  <meta name="description" content="Have you ever heard of TimeMachine? That Apple app that makes backups of your hard drive with a really nice interface to restore backups from finder &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.fmartingr.com/2013/01/20/appsunday-arq/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <link href="/atom.xml" rel="alternate" title="Felipe Martín" type="application/atom+xml">
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-274435-11']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body >
+	<div class="all">
+		<section class="sidebar align-center">
+			<header>
+				<a href="/">
+	<div class="profile_picture"></div>
+	<h1>Felipe Martín</h1>
+</a>
+<div class="slogan hide-mobile">
+	Be incomprehensible.<br />
+	If they can't understand, <br />
+	they can't disagree.
+</div>
+<div class="social">
+	<a href="http://twitter.com/fmartingr">
+		<div class="button twitter">
+			<span class="icon-twitter"></span>
+		</div>
+	</a>
+	<a href="http://www.linkedin.com/in/felipemartingarcia">
+		<div class="button linkedin">
+			<span class="icon-linkedin"></span>
+		</div>
+	</a>
+	<a href="http://last.fm/user/pyronhell">
+		<div class="button lastfm">
+			<span class="icon-lastfm"></span>
+		</div>
+	</a>
+	<a href="http://github.com/fmartingr">
+		<div class="button github">
+			<span class="icon-github"></span>
+		</div>
+	</a>
+	<a href="mailto:me@fmartingr.com">
+		<div class="button email">
+			<span class="icon-envelope"></span>
+		</div>
+	</a>
+	<a href="/atom.xml">
+		<div class="button rss">
+			<span class="icon-rss"></span>
+		</div>
+	</a>
+</div>
+<!--
+<div class="links">
+	<a href="http://fmartingr.github.com/">
+		<div class="button auto github">
+			<span class="icon-github"></span> Github projects
+		</div>
+	</a>
+</div>
+-->
+
+			</header>
+		</section>
+		<section class="content">
+			<div class="wrapper">
+				<div>
+<article class="hentry" role="article">
+  <div class="title">
+    
+      <h1 class="entry-title">#AppSunday: Arq</h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-20T16:30:00+01:00" pubdate data-updated="true">2013-01-20</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+  <div class="entry-content"><p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/main-screen.png" title="&#34;Main ARQ 2 Screen&#34;" alt="&#34;Main ARQ 2 Screen&#34;"></p>
+
+<p>Have you ever heard of <em>TimeMachine</em>? That Apple app that makes backups of your hard drive with a really nice interface to restore backups from finder. Well, Arq is that but without the nice interface and the backups are made to Amazon S3 instead of an external hard drive.</p>
+
+<!-- more -->
+
+
+<p>Backups to internet? Are you crazy? Maybe, but I find this pretty convenient since my MAC is a laptop with two USB ports and I don&#8217;t want to have one of them always busy with a external hard drive for Time Machine. And by the way, all backups are encrypted.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/exclude-filters.png" title="&#34;I don't want cache files!&#34;" alt="&#34;I don't want cache files!&#34;"></p>
+
+<p>You can filter whatever you don&#8217;t want to be stored. For example, I have checked the <code>~/Library</code> folder excluding every folder/file with <code>cache</code> on its name, and also I&#8217;ve unchecked manually -left in the screenshot- iTunes and mail folders. Since all my mail accounts are IMAP and my music are synced with iTunes Match I don&#8217;t really want those being stored.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/s3-budget.png" title="&#34;Please, no more than $4 from S3&#34;" alt="&#34;Please, no more than $4 from S3&#34;"></p>
+
+<p>Arq also let you configure how much money do you want to spend on your S3 Bucket. Just type in how much money -or how much space- you want to have, and Arq will do the calculations. If you&#8217;re near to your space limit, old files will be removed. I&#8217;ve a $4 limit but my monthly bill has never reached two bucks.</p>
+
+<p>If you don&#8217;t have a backup solution for your computer is worth giving it a try. Arq has saved my life two times already. Also made a full OS reinstall less more painful.</p>
+
+<blockquote><p><strong>Arq 3 update:</strong> At the time of writing a new version of Arq was released with Amazon Glacier support. Since I have not tested it I can say anything, but apparently have less costs if you don&#8217;t access frequently to the files and it seems that you can configure S3 and Glacier at the same time.</p></blockquote>
+
+<p>You can download a 30 day trial from <a href="http://www.haystacksoftware.com/arq/">Arq&#8217;s website</a>, after that, the complete version costs $29, but it&#8217;s totally worth the price.</p>
+</div>
+  
+</div>
+
+  
+    <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.fmartingr.com/2013/01/20/appsunday-arq/" data-via="fmartingr" data-counturl="http://blog.fmartingr.com/2013/01/20/appsunday-arq/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+  
+    <div class="post_paginator">
+    
+      <a class="basic-alignment right" href="/2013/01/20/manga-recommendation-kamisama-no-iutoori/" title="Next Post: Manga Recommendation: Kamisama no Iutoori (Fujimura Akeji)">Manga Recommendation: Kamisama no Iutoori (Fujimura Akeji) &raquo;</a>
+    
+    
+      <a class="basic-alignment left" href="/2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play/" title="Previous Post: Tweeria: The MMORPG that people without time can play">&laquo; Tweeria: The MMORPG that people without time can play</a>
+    
+  </div>
+</article>
+<hr class="clear-both" />
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+			</div>
+		</section>
+		<footer class="align-center">
+			<div class="license">
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+</div>
+<div class="powered-by">
+	<a href="http://github.com">Github</a> &amp; <a href="http://octopress.org/">Octopress</a>
+</div>
+
+		</footer>
+	</div>
+<script src="/javascripts/site.js"></script>
+<script> updateSizes(); </script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'fmartingr';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.fmartingr.com/2013/01/20/appsunday-arq/';
+        var disqus_url = 'http://blog.fmartingr.com/2013/01/20/appsunday-arq/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

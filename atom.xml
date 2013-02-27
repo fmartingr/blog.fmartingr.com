@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Felipe Martín]]></title>
+  <link href="http://blog.fmartingr.com/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com/"/>
+  <updated>2013-02-27T22:21:42+01:00</updated>
+  <id>http://blog.fmartingr.com/</id>
+  <author>
+    <name><![CDATA[Felipe]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Server going slow after IPTables configuration? Try this]]></title>
+    <link href="http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this/"/>
+    <updated>2013-04-27T22:45:00+02:00</updated>
+    <id>http://blog.fmartingr.com/2013/04/27/server-going-slow-after-iptables-configuration-try-this</id>
+    <content type="html"><![CDATA[<p>Recently I&#8217;ve started the migration of my company&#8217;s servers to a new provider. After checking that the OS installed on the -now- old servers was Ubuntu 8.04 (holy shit), I decided to make a fresh install of CentOS 6.3, cleaning up all the servers contents and setting up everything from scratch.</p>
+
+<p>After setting my iptables rules (INPUT whitelisted, OUTPUT accept all) I noticed a big delay on every connection made to my server. After checking a lot of things, these two solved the issue:</p>
+
+<h2>Enable unilimited traffic on your loopback interface</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>iptables -A INPUT -i lo  -j ACCEPT
+</span><span class='line'>iptables -A OUTPUT -o lo -j ACCEPT
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Enable traffic for connections started by your server</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hope this helps!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fringe series finale: My opinion]]></title>
+    <link href="http://blog.fmartingr.com/2013/02/24/fringe-series-finale-my-oppinion/"/>
+    <updated>2013-02-24T23:25:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/02/24/fringe-series-finale-my-oppinion</id>
+    <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/02/fringe.png"></p>
+
+<blockquote><p>Attention: This entry contains <strong>huge</strong> spoilers about the series finale of Fringe. Also, lots of negative opinions, if you like the series or don&#8217;t understand how sarcasm works, leave.</p></blockquote>
+
+<p>I&#8217;ve spent the last weeks watching the show from where I dropped it -the third season- and I can say that the final season is the worst of all. I don&#8217;t know if the show was losing audicence, if they only wanted to finish it, because I don&#8217;t know another reason to kill the show this way.</p>
+
+<p>From now on I&#8217;m talking only about the fifth season, as should be the more important and the one all of you -and myself- have fresh.</p>
+
+<ul>
+<li>The most stupid thing I remember: The tapes with the plan to get rid of the observers.<br/>
+Walter had a plan to defeat the observers, a plan that he never tell anyone until is destroyed from his mind by an observer. But, hey! He must have recorded the plan or something. I mean, he is a very smart one. He did. He recorded that he have a plan on a tape, but for knowing what it is you have to swim accross a sea of <em>amber</em> to find another eight tapes with the details. OH HOW SMART IS THAT! Just a stupid reason to keep characters busy. Without this the entire fifth season is done in two-three chapters.</li>
+<li>The observers powers.<br/>
+So, I can read minds and predict -in some way- the future. How can SOMEONE DEFEAT YOU IF YOU CAN PREDICT WHAT ARE THEY GOING TO DO. And more, you SAW in Walter&#8217;s mind what the plan was. The observers boss is just… asshole.</li>
+<li>The plan.<br/>
+Tons of VHS tapes with a specific plan of how to build a machine to generate a wormhole, but in the last moment, hey! But the observers generate wormholes for their supplies, let&#8217;s use that! Let&#8217;s put humanity&#8217;s hope on a last moment change! :D</li>
+<li>Olivia&#8217;s powers.<br/>
+You used your last <em>cortexiphan</em> -or however it&#8217;s written- on revive yourself from a headshot (LOL), then you get injected fours times, each for every dimension swap you have to do. Despite the fact that just this sucks, there&#8217;s more: William Bell needed a lot of time just to unleash her powers, and now, is not that she have the powers <em>active</em>, but also she knows how to swap dimensions on her own will. Fascinating. Also, from this point Olivia don&#8217;t need fear to use her powers.</li>
+<li>The observers chip.<br/>
+Peter removes a chip from a observer and the observer die. Removes it from himself and nothing happen. And I&#8217;m not talking about how deep the chip was jumping insinde the brain when Walter did the tests… just WTF, die already.</li>
+<li>Gun&#8217;s agains the observers.<br/>
+This is just a little thing: in <em>our</em> universe, Bell design some improved guns -that apparently only the rebels have 21 years in the future…- that shoots faster to deal with the observers. When Olivia travels to the alternative universe, they don&#8217;t have that guns but can kill observers without a problem.</li>
+<li>Time travel:<br/>
+Apparently there&#8217;s only one shot for a single one to time-travel: September takes it. But when he&#8217;s killed nothing prevents Walter for time traveling.</li>
+<li>Olivia vs. Observer Boss.<br/>
+Apparently the energy needed to move a truck with the cortexiphan powers is the electricity of the entire New York. That&#8217;s efficient use of energy.</li>
+</ul>
+
+
+<p>There&#8217;s more things, I&#8217;m sure, but I don&#8217;t remember just now. Besides, there&#8217;s more than enough here.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Manga recommendation: Psyren]]></title>
+    <link href="http://blog.fmartingr.com/2013/02/23/manga-recommendation-psyren/"/>
+    <updated>2013-02-23T22:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/02/23/manga-recommendation-psyren</id>
+    <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/02/psyren-cover.png" title="&#34;Psyren&#34;" alt="&#34;Psyren&#34;"></p>
+
+<h3>Summary</h3>
+
+<p>Psyren follows the adventures of Ageha Yoshina, a high school student who is chosen by Nemesis Q as a participant in the Psyren games. The games take place in a world known initially as Psyren, which is revealed to be the real world a decade in the future. Ageha and his friends attempt to alter the future and save the world from becoming Psyren.</p>
+
+<p><strong>Volumes</strong>: 16<br/>
+<strong>Chapters</strong>: 145 (finished)<br/>
+<strong>Genre</strong>: Action, Adventure, Game, Romance, Sci-Fi, Shounen, Super Power, Supernatural, Psychological<br/>
+<strong>Story/Art</strong>: Tokashi Iwashiro</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Where to buy Warcraft books ordered by storyline]]></title>
+    <link href="http://blog.fmartingr.com/2013/02/23/where-to-buy-warcraft-books-ordered-by-storyline/"/>
+    <updated>2013-02-23T02:15:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/02/23/where-to-buy-warcraft-books-ordered-by-storyline</id>
+    <content type="html"><![CDATA[<blockquote><p>I think is time to start publishing all the drafts that I&#8217;m just storing. I just want a way to schedule posts :_</p></blockquote>
+
+<p>I&#8217;ve reunited a list with all the warcraft books sorted by the storyline of the lore. Some of &#8216;em occur at the same time so if you see the same book twice that&#8217;s the reason.</p>
+
+<p>More info on <a href="http://www.wowwiki.com/Story_guide">WoWWiki</a>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Book name </th>
+<th> Amazon COM </th>
+<th> Amazon UK </th>
+<th> Kindle </th>
+<th> BookDepository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-game timeline events</strong> </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The war of the ancients Trilogy </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- The Well of Eternity </td>
+<td> <a href="http://www.amazon.com/The-Well-Eternity-WarCraft-Ancients/dp/0743471199/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Well-Eternity-Bk-Ancients/dp/0743471199/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Well-Eternity-ebook/dp/B000FC1LP6/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Well-Eternity-Bk-1-Richard-Knaak/9780743471190">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Demon Soul </td>
+<td> <a href="http://www.amazon.com/Demon-Soul-Warcraft-Ancients-Book/dp/0743471202/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Demon-Soul-Bk-Ancients/dp/0743471202/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Demon-Soul-ebook/dp/B000QBYENC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Demon-Soul-Bk-2-Richard-Knaak/9780743471206">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Sundering </td>
+<td> <a href="http://www.amazon.com/Sundering-Warcraft-Ancients-Trilogy-Book/dp/0743471210/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/gp/product/0743471210/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Sundering-Bk-War-Ancients/dp/0743471210/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Sundering-Bk-3-Richard-Knaak/9780743471213">BookDepository</a></td>
+</tr>
+<tr>
+<td>War of the Shifting Sands [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/shifting-sands/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rise of the Horde </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Rise-Horde-No/dp/0743471385/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Rise-Horde-No-World-Warcraft/dp/0743471385/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Rise-Horde-ebook/dp/B000QCTN50/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Rise-Horde-Rise-Horde-No-4-Christie-Golden/9780743471381">BookDepository</a></td>
+</tr>
+<tr>
+<td>Unbroken [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/unbroken/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Warcraft: Orcs and Humans</strong> </td>
+<td> <em>The first war</em> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last Guardian </td>
+<td> <a href="http://www.amazon.com/Last-Guardian-Warcraft-Book-No-3/dp/0671041517/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Last-Guardian-No-3/dp/0671041517/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/The-Warcraft-Last-Guardian-ebook/dp/B000FC0QTS/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Last-Guardian-No3-Jeff-Grubb/9780671041519">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>Warcraft II</strong> </td>
+<td> <em>The second war</em> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Tides of Darkness </td>
+<td> <a href="http://www.amazon.com/Tide-Darkness-Warcraft-Aaron-Rosenberg/dp/1416539905/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Tides-Darkness-World-Warcraft-Rosenberg/dp/1416539905/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Tides-Darkness-ebook/dp/B000UZQJIC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Tides-Darkness-Aaron-Rosenberg/9781416539902">BookDepository</a></td>
+</tr>
+<tr>
+<td>Beyond the Dark Portal </td>
+<td> <a href="http://www.amazon.com/Beyond-Dark-Portal-World-Warcraft/dp/1416550860/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Beyond-Dark-Portal-World-Warcraft/dp/1416550860/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Beyond-Portal-ebook/dp/B0013TX8YC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Beyond-Dark-Portal-Aaron-Rosenberg/9781416550860">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>Post-Warcraft II</strong> &amp; <strong>Pre-Warcraft III</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Day of the Dragon </td>
+<td> <a href="http://www.amazon.com/Day-Dragon-WarCraft-Book-No-1/dp/0671041525/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Day-Dragon-No-1/dp/0671041525/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Day-Dragon-No-1-ebook/dp/B000FBJHTY/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Day-Dragon-No1-Richard-Knaak/9780671041526">BookDepository</a></td>
+</tr>
+<tr>
+<td>Lord of the Clans </td>
+<td> <a href="http://www.amazon.com/Lord-Clans-Warcraft-Book-2/dp/0743426908/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Lord-Clans-No/dp/0743426908/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Lord-Clans-2-ebook/dp/B000FC0RC4/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Lord-Clans-No-2-Christie-Golden/9780743426909">BookDepository</a></td>
+</tr>
+<tr>
+<td>Of Blood and Honor </td>
+<td> <a href="http://www.amazon.com/Warcraft-Blood-Honor-ebook/dp/B000FC0WII/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Blood-Honor-ebook/dp/B003ZDOVGI/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Of-Blood-Honor-ebook/dp/B000FC0WII/">Kindle</a> </td>
+<td> &#8211;</td>
+</tr>
+<tr>
+<td>Road to Damnation [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/damnation/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Warcraft III: Reign of Chaos</strong> </td>
+<td> <em>The third war</em> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Arthas: Rise of the Lich King </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Arthas-Rise-Lich/dp/143915760X/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Arthas-Rise-Lich-World-Warcraft/dp/143915760X/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-of-Warcraft-Arthas-ebook/dp/B001NLL6LM/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/World-Warcraft-Arthas-Christie-Golden/9781416550778">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>Warcraft III: The Frozen Throne</strong> </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The war of the ancients Trilogy </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- The Well of Eternity </td>
+<td> <a href="http://www.amazon.com/The-Well-Eternity-WarCraft-Ancients/dp/0743471199/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Well-Eternity-Bk-Ancients/dp/0743471199/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Well-Eternity-ebook/dp/B000FC1LP6/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Well-Eternity-Bk-1-Richard-Knaak/9780743471190">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Demon Soul </td>
+<td> <a href="http://www.amazon.com/Demon-Soul-Warcraft-Ancients-Book/dp/0743471202/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Demon-Soul-Bk-Ancients/dp/0743471202/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Demon-Soul-ebook/dp/B000QBYENC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Demon-Soul-Bk-2-Richard-Knaak/9780743471206">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Sundering </td>
+<td> <a href="http://www.amazon.com/Sundering-Warcraft-Ancients-Trilogy-Book/dp/0743471210/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/gp/product/0743471210/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Sundering-Bk-War-Ancients/dp/0743471210/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Sundering-Bk-3-Richard-Knaak/9780743471213">BookDepository</a></td>
+</tr>
+<tr>
+<td>Cycle of Hatred </td>
+<td> <a href="http://www.amazon.com/Cycle-Hatred-World-Warcraft-Bk/dp/0743471369/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Cycle-Hatred-World-Warcraft-Paperback/dp/0743471369/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Cycle-Hatred-ebook/dp/B000GCFXKY/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Cycle-Hatred-Bk-4-Keith-DeCandido/9780743471367">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>World of Warcraft</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>War of the Shifting Sands [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/shifting-sands/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>WoW: The Burning Crusade</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Night of the Dragon </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Dragon-Richard-Knaak/dp/0743471377/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Night-Dragon-World-Warcraft-Richard/dp/0743471377/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Night-Dragon-ebook/dp/B001FA0I2Y/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Night-Dragon-Richard-Knaak/9780743471374">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>WoW: Wrath of the Lich King</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Stormrage </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Stormrage-Richard-Knaak/dp/1439189463/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Stormrage-World-Warcraft-Richard-Knaak/dp/1439189463/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-of-Warcraft-Stormrage-ebook/dp/B0037714S0/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Stormrage-Richard-Knaak/9781439189467">BookDepository</a></td>
+</tr>
+<tr>
+<td>The Shattering: Prelude to Cataclysm </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Shattering-Prelude-Cataclysm/dp/1416550747/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/World-Warcraft-Shattering-Prelude-Cataclysm/dp/1416550747/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-The-Shattering-ebook/dp/B003L785VK/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Shattering-Christie-Golden/9781439172742">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>WoW: Cataclysm</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wolfheart </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Wolfheart-Richard-Knaak/dp/1451605765/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Wolfheart-World-Warcraft-Cataclysm-Richard/dp/1451605765/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-of-Warcraft-Wolfheart-ebook/dp/B004T4KXLE/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Wolfheart-Richard-Knaak/9781451605761">BookDepository</a></td>
+</tr>
+<tr>
+<td>Thrall: Twilight of the Aspects </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Twilight-Aspects-Gallery/dp/B005X4985G/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Thrall-Twilight-Aspects-Warcraft-Cataclysm/dp/143919663X/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Twilight-Aspects-ebook/dp/B004G8QNGC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Thrall-Christie-Golden/9781416550884">BookDepository</a></td>
+</tr>
+<tr>
+<td>Jaina Proudmore: Tides of War </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Jaina-Proudmoore-Tides/dp/1416550763/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Jaina-Proudmore-Tides-Warcraft-Pandaria/dp/1416550763/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Jaina-Proudmoore-ebook/dp/B0061NXDO0/">Kindle</a> </td>
+<td>  <a href="http://www.bookdepository.co.uk/Jaina-Proudmore-Tides-War-Christie-Golden/9781416550761">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>WoW: Mists of Pandaria</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#8211; </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Manga Recommendation: Kamisama no Iutoori (Fujimura Akeji)]]></title>
+    <link href="http://blog.fmartingr.com/2013/01/20/manga-recommendation-kamisama-no-iutoori/"/>
+    <updated>2013-01-20T21:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/01/20/manga-recommendation-kamisama-no-iutoori</id>
+    <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/kamisama-no-iutoori.jpg" title="&#34;Kamisama no Iutoori (FUJIMURA Akeji)&#34;" alt="&#34;Kamisama no Iutoori (FUJIMURA Akeji)&#34;"></p>
+
+<h3>Summary</h3>
+
+<p>Takahata Shun&#8217;s day at high school begins just as normal and boring as ever, but it doesn&#8217;t end that way. After his teacher&#8217;s head explodes, he and his classmates find themselves forced to play children&#8217;s games, such as Daruma ga Koronda (a game like Red Light/Green Light), with deadly stakes. With no idea who is behind this mysterious deadly game session, and no way of knowing when it will finally end, the only thing Shun and other students can do is keep trying to win&#8230;</p>
+
+<p><strong>Volumes</strong>: 5<br/>
+<strong>Chapters</strong>: 21 (finished)<br/>
+<strong>Genre</strong>: Action, Horror, School, Shônen, Supernatural<br/>
+<strong>Story</strong>: Muneyuki Kaneshiro<br/>
+<strong>Art</strong>: Akeji Fujimura</p>
+
+<p>Thanks to <a href="http://twitter.com/rsanchezbalo">@rsanchezbalo</a> for his recommendation!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: Arq]]></title>
+    <link href="http://blog.fmartingr.com/2013/01/20/appsunday-arq/"/>
+    <updated>2013-01-20T16:30:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/01/20/appsunday-arq</id>
+    <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/main-screen.png" title="&#34;Main ARQ 2 Screen&#34;" alt="&#34;Main ARQ 2 Screen&#34;"></p>
+
+<p>Have you ever heard of <em>TimeMachine</em>? That Apple app that makes backups of your hard drive with a really nice interface to restore backups from finder. Well, Arq is that but without the nice interface and the backups are made to Amazon S3 instead of an external hard drive.</p>
+
+<!-- more -->
+
+
+<p>Backups to internet? Are you crazy? Maybe, but I find this pretty convenient since my MAC is a laptop with two USB ports and I don&#8217;t want to have one of them always busy with a external hard drive for Time Machine. And by the way, all backups are encrypted.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/exclude-filters.png" title="&#34;I don't want cache files!&#34;" alt="&#34;I don't want cache files!&#34;"></p>
+
+<p>You can filter whatever you don&#8217;t want to be stored. For example, I have checked the <code>~/Library</code> folder excluding every folder/file with <code>cache</code> on its name, and also I&#8217;ve unchecked manually -left in the screenshot- iTunes and mail folders. Since all my mail accounts are IMAP and my music are synced with iTunes Match I don&#8217;t really want those being stored.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/s3-budget.png" title="&#34;Please, no more than $4 from S3&#34;" alt="&#34;Please, no more than $4 from S3&#34;"></p>
+
+<p>Arq also let you configure how much money do you want to spend on your S3 Bucket. Just type in how much money -or how much space- you want to have, and Arq will do the calculations. If you&#8217;re near to your space limit, old files will be removed. I&#8217;ve a $4 limit but my monthly bill has never reached two bucks.</p>
+
+<p>If you don&#8217;t have a backup solution for your computer is worth giving it a try. Arq has saved my life two times already. Also made a full OS reinstall less more painful.</p>
+
+<blockquote><p><strong>Arq 3 update:</strong> At the time of writing a new version of Arq was released with Amazon Glacier support. Since I have not tested it I can say anything, but apparently have less costs if you don&#8217;t access frequently to the files and it seems that you can configure S3 and Glacier at the same time.</p></blockquote>
+
+<p>You can download a 30 day trial from <a href="http://www.haystacksoftware.com/arq/">Arq&#8217;s website</a>, after that, the complete version costs $29, but it&#8217;s totally worth the price.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tweeria: The MMORPG that people without time can play]]></title>
+    <link href="http://blog.fmartingr.com/2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play/"/>
+    <updated>2013-01-14T23:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play</id>
+    <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/tweeria/header.png" title="&#34;Tweeria summary&#34;" alt="&#34;Tweeria summary&#34;"></p>
+
+<p>Many of us -or maybe not, but let&#8217;s assume that- have played at least one <em>MMORPG</em> game in our life and we know that it could be <em>very</em> time consuming. Level up, going to instances, getting better year… and if you was <em>hardcore</em> enough: scheduled raids.</p>
+
+<p>As we grow up we notice that the time for this kind of things fade away, but you still want to party with friends and get some <em>purples</em>. Until I found <strong>Tweeria</strong>, that <strong>brilliant idea</strong> of using your twitter posts to interact with your <em>alter-ego</em> on a MMORPG world.</p>
+
+<!-- more -->
+
+
+<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/tweeria/profile.png" title="&#34;My profile&#34;" alt="&#34;My profile&#34;"></p>
+
+<p>It shares some of the features of common MMORPGs but the good part is that <strong>we don&#8217;t need to do anything else that <em>tweet</em></strong> for many of them, so your character makes an action for every tweet you post -I think it&#8217;s not every tweet, just a few in a period of time, haven&#8217;t checked it-. You can defeat <em>NPCs</em>, loot an item, going onto a dungeon alone… you can even save -or kill :P-  your friends if you mention or <em>retweet</em> them in your tweets.</p>
+
+<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/tweeria/events.png" title="&#34;Upcoming and in-progress raids&#34;" alt="&#34;Upcoming and in-progress raids&#34;"></p>
+
+<p>However, there are some things that needs user interaction: the raids. You can have up to five scheduled raids at the same time but you need to join for it manually. However, it&#8217;s fast and easy: you just need to get into the events page and join the event you want. For gear swapping, selling items and buying spells you need to interact on the site too. According to the posts you can craft items and spells but that part of the game does not work for me, so I don&#8217;t know how it works.</p>
+
+<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/tweeria/stats.png" title="&#34;Some tweeria stats windows&#34;" alt="&#34;Some tweeria stats windows&#34;"></p>
+
+<p>Another thing you can do to interact with your character is using spells. For that, you need to buy on the market first, and when you have them equipped, you can cast one by tweeting <code>!&lt;spell shortcut&gt;</code> on a given tweet, the game will use it <em>automagically</em>.</p>
+
+<p>Oh, did I mention that also have <strong>achievements</strong>?</p>
+
+<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/tweeria/map.png" title="&#34;The beautiful map&#34;" alt="&#34;The beautiful map&#34;"></p>
+
+<p>As I&#8217;ve said, it surprised me how the most basic idea can be developed into a very enjoyable game. Unlike <em>ogame</em>, <em>travian</em>, and its brothers, you don&#8217;t need to check the site every minute.<br/>
+But to be honest… I tweet more often since I play <em>Tweeria</em>.</p>
+
+<p>If you want to check it out <a href="http://tweeria.com/registration?fmartingr">follow this link and join the world of tweeria</a>. You&#8217;ll help me getting an achievement! :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: AppCleaner]]></title>
+    <link href="http://blog.fmartingr.com/2013/01/13/appsunday-appcleaner/"/>
+    <updated>2013-01-13T19:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/01/13/appsunday-appcleaner</id>
+    <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-appcleaner/main-interface.png" title="&#34;Main Interface&#34;" alt="&#34;Main Interface&#34;"></p>
+
+<p>If I hate something about uninstalling apps is all the rubbish that is left behind. Windows had that problem and unfortunately OS X have the same curse, but there&#8217;s some apps that help you removing all that files/folders used for whatever purpose they are. The one that I use its called <strong>AppCleaner</strong> and its freeware.</p>
+
+<!-- more -->
+
+
+<p>The interface is really simple, you have two options: Dragging an app or using the list to look for the one we want to remove. Note here that you can drag&amp;drop the app from wherever it is -I mean, from the Applications folder, downloads folder, a pen drive…- because you may want to remove the configuration files and not the app itself.</p>
+
+<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-appcleaner/unsintalling-an-app.png" title="&#34;Uninstall interfacece&#34;" alt="&#34;Uninstall interfacece&#34;"></p>
+
+<p>When you select an app, a list will show you all the files it have found and you can select what files you want to remove, click the <em>Delete</em> button and you are set. Simple as that.</p>
+
+<p>It has been a short <em>#AppSunday</em> but you know, the simpler the better ;D.</p>
+
+<p>If you want to check it out, go to <a href="http://www.freemacsoft.net/appcleaner/">AppCleaner&#8217;s Website</a>.<br/>
+You also have a paid alternative called <a href="http://www.appzapper.com/">AppZapper</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Weekly project status: Dropping projects is hard]]></title>
+    <link href="http://blog.fmartingr.com/2013/01/12/weekly-project-status-dropping-projects-is-hard/"/>
+    <updated>2013-01-12T00:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/01/12/weekly-project-status-dropping-projects-is-hard</id>
+    <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/global/weekly-project-status-banner.jpg">
+Since I wrote <a href="http://blog.fmartingr.com/2012/12/31/2013/">the last post of 2012</a> I have been wondering if I could finish -or at least, work- on all the projects or experiments I wanted to. The answer was easy: <strong>no</strong>. I just don&#8217;t have enough time for all the stuff I want to do, so I have made some decisions about my projects.</p>
+
+<!-- more -->
+
+
+<h1>Project <em>herobrine</em> <strong><em>…dropped!</em></strong></h1>
+
+<p><img class="center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/minecraft-database.png" title="&#34;Early draft of Project Herobrine&#34;" alt="&#34;Early draft of Project Herobrine&#34;"></p>
+
+<p>The first time I did something about this project was like 2010, as some of you have guessed by the name of the project, its minecraft related.  It was intended to be a <em>wowhead-like</em> minecraft database but not only on PC.</p>
+
+<p>Some features I wanted:</p>
+
+<ul>
+<li>Developed with django, returning json objects to the client.</li>
+<li>Client MVC based with BackboneJS</li>
+<li>Responsive design -so you can check with your tablet while play on your computer-</li>
+<li>&#8220;no refresh&#8221; -backbone-</li>
+<li>WebGL/Canvas block rendering</li>
+<li>JS Redstone circuit maker</li>
+<li>JS Dye maker</li>
+<li>Homepage with random background featuring user&#8217;s screenshots (above)</li>
+<li>Interactive crafting/brewing/&#8230;</li>
+</ul>
+
+
+<p>Finally I have to say goodbye to this <em>jewel</em> -and it&#8217;s really hard because I love minecraft and I wanted this to happen- because of various reasons: <a href="http://minecraftwiki.net">minecraftwiki</a> already contains a lot of information -and it&#8217;s really crowded-, the barrier of contents -I have to type in all the minecraft items, blocks, biomes, etc- and that this wasn&#8217;t really a technical challenge -actually, some things are, but most of it are just database relations and stuff-.</p>
+
+<p>I want to prepare a future post with all the work I made on this project. There&#8217;s not much code but a lot of drafts and ideas that could help someone.</p>
+
+<h1>Project <em>Serenity</em> <strong><em>…dropped!</em></strong></h1>
+
+<p>This was intended to be a way to simplify my jenkins business. Since I need a lot of tasks like: compile, minify, copy, deploy, upload, test… I wanted an app so I just define everything I need on a <em>YAML</em> file and call the app with <code>serenity &lt;task&gt;</code>.</p>
+
+<p>I have some drafts built, a base YAML file, and some features planned like integrated tasks, custom tasks in the YAML file, configuration…</p>
+
+<p>Haven&#8217;t coded for this one yet, but fortunately I heard about <a href="http://gruntjs.com/">grunt</a> who may be something very close at what I wanted this one to be.</p>
+
+<h1>ZombiePress (<a href="http://github.com/fmartingr/zombiepress/">github</a>) <strong><em>…dropped!</em></strong></h1>
+
+<p>It&#8217;s obvious. I was making my own blog software but since now I&#8217;m a proud octopress user this is no longer needed. I will keep the repo online just for making me feel nostalgic in the future.</p>
+
+<h1>BlueBird <strong><em>…dropped!</em></strong></h1>
+
+<p>For all the iPad users… remember when Twitter changed the UI of the app? Did you remember the old one? I do. The new interface is <strong>total crap</strong>, the other was simply brilliant, and for me it was near the best one for an iOS app. I was hoping to get a clone working in javascript, but my knowledge of touch screens is not that good, I need to study more on the matter and then <strong>maybe</strong> I will try again, but I&#8217;m pretty sure some javascript guru will do something before that happens.</p>
+
+<h1>Project <em>Amaranth</em></h1>
+
+<p>The bigger brother. Recently I started a Vampire: Dark Age game with some friends and it remembered me to when I played rolegames over IRC. I started thinking that a online interface for roleplaying will be nice to have, because you can also use it in a live session to whisper, draw, etc. The brainstorm started quick enough for me to consider making it.</p>
+
+<h1>Project <em>RTC</em></h1>
+
+<p>Just born! -yesterday :P-. I want to make some kind of webRTC site to have conversations without the need of register, just create a conversation, get a link and you are set. It&#8217;s more an experiment than a project itself.</p>
+
+<h1>Uvepe8 (<a href="http://github.com/fmartingr/uvepe8/">github</a>)</h1>
+
+<p>I&#8217;m very proud -in a useful way- of this one and of course I&#8217;m maintaining it.</p>
+
+<p>For the ones who don&#8217;t know, its sort of <em>video-to-html5-canvas</em>, a mix between apple&#8217;s and sublime text&#8217;s, but mines support transparency -I needed it-.</p>
+
+<p>There are some features I want to implement shown on the README file and a full code review.</p>
+
+<h1>Dharma (<a href="http://github.com/fmartingr/dharma/">github</a>)</h1>
+
+<p>An application to check for 404 links on websites, a lot of things could be added to this, but for now is for playing around with threading, gevent and that kind of things.</p>
+
+<hr />
+
+<p>I have some <em>other things</em> in mind I want to try, but that deserves another post -which is already in the works-.</p>
+
+<p>Stay tuned for more updates, and as always, anything you want to say: comment, tweet, mail or shout at me!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: SublimeText 2]]></title>
+    <link href="http://blog.fmartingr.com/2013/01/06/appsunday-sublimetext2/"/>
+    <updated>2013-01-06T12:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2013/01/06/appsunday-sublimetext2</id>
+    <content type="html"><![CDATA[<blockquote><p>Welcome to #AppSunday, my little weekly space on the blog to review and explore applications I use in my day to day.</p></blockquote>
+
+<p>As promised, welcome to the first <em>#AppSunday</em> of the year. This time I will look into <strong>SublimeText 2</strong>, a very good developing app you all will probably know already.</p>
+
+<!-- more -->
+
+
+<p>I&#8217;ve tried a lot of applications for developing. All we developers have. Looking for an application that fit your needs tend to be the worst part when it comes to software development.</p>
+
+<p>I&#8217;m finally using SublimeText for every language except for python/django where I still use <em>pyCharm</em> from time to time -I think pycharm&#8217;s code completion it&#8217;s better than sublimetext&#8217;s one-.</p>
+
+<p>I&#8217;m giving the credit of knowing SublimeText to two individuals: first, <a href="http://twitter.com/juanriaza">@juanriaza</a>. Told me about this <strong>a lot</strong> of times, but I really never tested it until <a href="http://twitter.com/jgasteiz">@jgasteiz</a> came to scene. Meet him on the 2012&#8217;s google Hackaton where he was using SublimeText -the multiple cursor thingy- and I though… <strong>I must try that</strong>.</p>
+
+<h1>What is it?</h1>
+
+<p>Difficult question here. The easy answer is <strong>a text editor</strong>, but it&#8217;s much more that that.<br/>
+It&#8217;s not and IDE, but it is.<br/>
+It&#8217;s complicated.</p>
+
+<p>I say it as an <strong>extendable advanced text editor</strong>. Because it already have a lot of useful functions by its own -I will explain some later-, but also have <a href="http://blog.fmartingr.com/2012/12/21/my-sublimetext2-workspace/">a lot of plugins</a> that are capable of extending the app functionality to a new level.</p>
+
+<h1>What makes ST2 so special?</h1>
+
+<p>Before the screenshots and the features I need to say one thing about working with ST2: <strong>focus on your keyboard, not your mouse</strong>. The entire workflow with ST2 works this way, if you&#8217;re afraid just don&#8217;t be, you can be faster without using your mouse and this app it&#8217;s really helpful with that. ST2 have key bindings for <em>almost</em> every command. With this in mind, the first feature:</p>
+
+<blockquote><p><strong>Note</strong>: From now on I will use OS X keybinds, if you&#8217;re a Windows/Linux user, replace <code>CMD</code> with <code>Ctrl</code>.</p></blockquote>
+
+<h2>Command palette</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/command-palette.png" title="&#34;The command palette looking for the Install Package command&#34;" alt="&#34;The command palette looking for the Install Package command&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>SHIFT</code> + <code>P</code><br/>
+Brings down a search menu with all the commands the application have. You can move with the cursor or use it&#8217;s smart search to select the command you&#8217;re looking for. As you can see in the screenshot you don&#8217;t need to write down the whole command name, it just need some letters in the correct order.</p>
+
+<h2>Go to anything</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/go-to-anything.png" title="&#34;Looking for a file that I don't remember where it is&#34;" alt="&#34;Looking for a file that I don't remember where it is&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>P</code>
+You don&#8217;t really need to look that path tree ever again. Just hide it and if you need to edit some file use the <em>go to anything</em> function, write the filename -or just some letters again, remember, smart search- and press enter. There you go, your file with just some key strokes.</p>
+
+<p>You can also use a <code>:</code> or <code>@</code> statement to go directly to a line number or a method! Also, you can use <code>#</code> to search text within the file.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/go-to-anything-2.png" title="&#34;Going to a specified method-line number&#34;" alt="&#34;Going to a specified method-line number&#34;"></p>
+
+<h2>Multiple cursors</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/multiple-cursors.png" title="&#34;Fast refactoring&#34;" alt="&#34;Fast refactoring&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>D</code><br/>
+One of the star features, the multiple cursors. Highlight a word and press the key bind to highlight the next occurrence, when you have all, write to edit all at the same time!</p>
+
+<h2>Split editing</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/split-editing.png" title="&#34;Split editing&#34;" alt="&#34;Split editing&#34;"></p>
+
+<p>ST2 comes with seven layouts: Single, two/three/four columns, two/three rows and four grid. You can change to anyone of this with a key combination, and another one to move the file from one view to another.</p>
+
+<p>For example, in the picture, I used the <em>go to anything</em> to open the file, then pressed <code>CMD</code> + <code>ALT</code> + <code>2</code> to select the two columns view, and then <code>CTRL</code> + <code>SHIFT</code> + <code>2</code> to move the opened file to the second view. May sound complicated but it was like 2 seconds -or less- of key strokes.</p>
+
+<p>I don&#8217;t know if you can add more layouts or customize the default ones.</p>
+
+<h2>Find with regular expressions</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/find-regular-expressions.png" title="&#34;Search using regular expressions&#34;" alt="&#34;Search using regular expressions&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>F</code> to find, then <code>ALT</code> + <code>CMD</code> + <code>R</code> to activate the regular expression search.</p>
+
+<h1>Conclusion</h1>
+
+<p>I&#8217;ve shown you some of the features that make it a very great developing tool. There are much much more, but I can&#8217;t afford being writing this post for days. Go to <a href="http://www.sublimetext.com/">the SublimeText 2 website</a> to download and give it a try.</p>
+
+<p>Take your first week as a transition one, since it will be different from what you&#8217;re using right now, unless you&#8217;re a <em>vi maniac</em>. Explore the features, customize your settings, develop in various languages and then decide. It is worth your skills?</p>
+
+<p>Hope you enjoyed this post! As always, suggestions, bugs, <em>grammar fails</em>, etc to my twitter account or email. Thanks!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013]]></title>
+    <link href="http://blog.fmartingr.com/2012/12/31/2013/"/>
+    <updated>2012-12-31T21:30:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/12/31/2013</id>
+    <content type="html"><![CDATA[<p>According to the Gregorian calendar, a new year is coming.</p>
+
+<p>I&#8217;m not gonna waste my time -nor yours- making promises, wishing things and all that crappy stuff. 2012 has been good and bad, I want 2013 to stay that way, but I will keep that to me and I&#8217;m going to expose what I&#8217;ve thought about the blog and what I want to do with it during 2013.</p>
+
+<!-- more -->
+
+
+<ul>
+<li><p>First of all, the <strong>#AppSunday</strong> thing: doing it. I&#8217;ve missed the last two because of the date and also I wasn&#8217;t really in the mood to write a word either. I really want to do it, so I will keep writing a Sunday post about apps and stuff as long as I&#8217;ve something about to write.</p></li>
+<li><p>As for <em>new technologies</em>, the reason I do not write too much about developing is because I do not think I&#8217;m a good programmer. I can&#8217;t think I&#8217;m either good nor bad for something I <strong>love</strong>. I develop just because I enjoy it, as I&#8217;ve the bless that it&#8217;s also my job. But after a lot of thinking, I&#8217;m going to post some micro-entries about new things I&#8217;m using -that could be things you already know long time ago- like PaaS services, libraries and stuff in general. I&#8217;ve a draft about <em>how to copy a mysql record with one SQL statement</em>, for example. If people like the posts as I like writing them, I will keep on with it.</p></li>
+<li><p>Also, this last year has been really… complete? I&#8217;ve started a lot of new projects -I really mean it, a lot of things whisper around my mind and some of it already have drafts and time invested on them-, so I&#8217;ve thought writing about its evolution. I don&#8217;t know if I will make individual posts of each project or a weekly summary of all of them -or at least the ones I&#8217;ve worked that week-, but I want to share experiences, problems, solutions, technologies, <em>code</em>… with you.</p></li>
+<li><p>I still don&#8217;t know if I will write personal experiences/opinion posts. I assumed that I will decide it when the time comes.</p></li>
+<li><p>There won&#8217;t be a &#8220;What I&#8217;ve done in the last six months&#8221; post anymore. The one that is already in the blog will be purged when the translation is completed.</p></li>
+</ul>
+
+
+<p>Now, get off the screen, eat a lot and get drunk. Today is the day.</p>
+
+<p>Happy new year!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My SublimeText 2 Workspace]]></title>
+    <link href="http://blog.fmartingr.com/2012/12/21/my-sublimetext2-workspace/"/>
+    <updated>2012-12-21T20:30:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/12/21/my-sublimetext2-workspace</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2><a href="http://wbond.net/sublime_packages/package_control">Package Control</a></h2>
+
+<p>Essential. Install this and forget about downloading files, updating, &#8230; Choose to use or not every other plugin, but this one is mandatory. Just <a href="http://wbond.net/sublime_packages/package_control/installation">install</a> it.</p>
+
+<h2><a href="https://github.com/buymeasoda/soda-theme/">Soda theme</a></h2>
+
+<p>The best theme I&#8217;ve seen for SublimeText. It&#8217;s really clean and elegant. Don&#8217;t forget to use it&#8217;s custom colors too!</p>
+
+<p><img class="center" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/SodaTheme.png" title="&#34;Soda theme&#34;" alt="&#34;Soda theme&#34;"></p>
+
+<h2><a href="https://github.com/SublimeLinter/SublimeLinter">SublimeLinter</a></h2>
+
+<p>Highlight potential errors using <em>lint</em> programs so you can keep your code clean.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/SublimeLinter.png" title="&#34;Example of SublimeLinter&#34;" alt="&#34;Example of SublimeLinter&#34;"></p>
+
+<h2><a href="https://github.com/Kronuz/SublimeCodeIntel">SublimeCode Intel</a></h2>
+
+<p>Helps with autocomplete, allows <em>jump-to</em> and displays information of the highlighted function on the status bar.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/SublimeCodeIntel.png" title="&#34;Example of SublimeCode Intel&#34;" alt="&#34;Example of SublimeCode Intel&#34;"></p>
+
+<h2><a href="https://github.com/JulianEberius/SublimeRope">SublimeRope</a> [<strong>Python only!</strong>]</h2>
+
+<p>Add a lot of IDE-like features to python developers thanks to the <a href="http://rope.sourceforge.net/">rope</a> library.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/SublimeRope.png" title="&#34;Example of SublimeRope&#34;" alt="&#34;Example of SublimeRope&#34;"></p>
+
+<h2><a href="https://github.com/kemayo/sublime-text-2-git">Git</a> &amp; <a href="https://github.com/jisaacks/GitGutter">GitGutter</a></h2>
+
+<p>The first one is a tool to integrate git commands onto the command palette, the second one inserts an icon in the gutter area whether a line has been modified, added or removed.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/GitGutter.png" title="&#34;Example of GitGutter&#34;" alt="&#34;Example of GitGutter&#34;"></p>
+
+<h2><a href="https://github.com/titoBouzout/SideBarEnhancements">SideBarEnchancements</a></h2>
+
+<p>Add tons of functions to the sidebar contextual menu!</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/SidebarEnhancements.png" title="&#34;SidebarEnhancements contextual menu&#34;" alt="&#34;SidebarEnhancements contextual menu&#34;"></p>
+
+<h2><a href="https://github.com/skuroda/Sublime-AdvancedNewFile">AdvancedNewFile</a></h2>
+
+<p>This is the best. Create a new file just with a key combination, no popups, no nothing. Just press <code>CMD</code>+<code>ALT</code>+<code>N</code>, write the full path -relative to your project path- of the file you want to create and press enter.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/SublimeWorkspace/AdvancedNewFile.png" title="&#34;Example of AdvancedNewFile&#34;" alt="&#34;Example of AdvancedNewFile&#34;"></p>
+
+<p>I use some other plugins, but this is my top. Do you use other really good plugins not listed here? Tell me!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: OS X screenshots without shadows]]></title>
+    <link href="http://blog.fmartingr.com/2012/12/20/howto-os-x-screenshots-without-shadows/"/>
+    <updated>2012-12-20T21:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/12/20/howto-os-x-screenshots-without-shadows</id>
+    <content type="html"><![CDATA[<p>The beautiful shadows that OS X brings to screenshots are good in some ways or depending the purpose of the screenshot itself. But for other things are a pain in the ass.</p>
+
+<p>After some research I&#8217;ve found multiple ways to get rid of that shadows</p>
+
+<h2>1) The default setting</h2>
+
+<p>Since the terminal command allows you to deactivate the shadow I assumed that there could be some <code>defaults</code> option for the same purpose. And it is!</p>
+
+<p>With this two commands you can use the normal keybinds to do <em>shadowless</em> screenshots:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>defaults write com.apple.screencapture disable-shadow -bool true
+</span><span class='line'>killall SystemUIServer</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To revert to the original status:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>defaults write com.apple.screencapture disable-shadow -bool false
+</span><span class='line'>killall SystemUIServer</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>2) The Grab utility</h2>
+
+<p>Open the Grab.app: <code>Applications &gt; Utilities &gt; Grab</code>, and under the <code>Capture</code> menu you will find the <code>Window</code> option.</p>
+
+<p>You can also use the <code>SHIFT</code>+<code>CMD</code>+<code>W</code> keybind -while Grab.app is focused-.</p>
+
+<h2>3) The terminal way</h2>
+
+<p>OS X provides us with the <code>screencapture</code> command, so we can hack around and build our own scripts. A simple one that allows interactive capture without shadow:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>screencapture -i -o filename.png</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A more complete one that saves the screenshot on the desktop with the datetime as filename:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>screencapture -i -o ~/Desktop/screenshot_`date +%Y%m%d_%H%M%S`.png</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These are some ways I found. You can play around and make your own bash or Automator scripts and improve it to your needs.</p>
+
+<p>Hope this helps!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: TVShows]]></title>
+    <link href="http://blog.fmartingr.com/2012/12/16/appsunday-tvshows/"/>
+    <updated>2012-12-16T13:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/12/16/appsunday-tvshows</id>
+    <content type="html"><![CDATA[<blockquote><p>Bienvenido a #AppSunday, mi pequeño rincón semanal en el blog dedicado a explorar y mostrar aplicaciones que uso en mi día a día.</p></blockquote>
+
+<p><strong>TVShows</strong> es una aplicación que cualquier persona que posea un ordenador con OS X y sea seguidora de alguna serie debería tener instalada.</p>
+
+<p>Se trata de un panel de preferencias del sistema (aunque han comentado que para la versión 3.0 quieren hacer una aplicación <em>standalone</em>) que te permite mantener una lista de series que sigues para que la aplicación automáticamente te descargue los capítulos nuevos a medida que salgan -con tu aplicación de torrent favorita-. Increíble.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/tvshows.png" title="&#34;Ventana principal de TVShows&#34;" alt="&#34;Ventana principal de TVShows&#34;"></p>
+
+<!-- more -->
+
+
+<p>El creador del programa mantiene una lista de series americanas bastante completa. Para añadir una de las implementadas basta con irte a la opción de añadir serie y buscarla; Un panel de preferencias te permitirá escoger qué capítulos quieres descargar, si quieres que se descarguen automáticamente y su calidad. Después solo tendrás que acordarte de ver la serie cuando se te descargue.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2012/12/tvshows1.png" title="&#34;Configurando The Big Bang Theory&#34;" alt="&#34;Configurando The Big Bang Theory&#34;"></p>
+
+<p>Otras características que tiene:</p>
+
+<ul>
+<li>Posibilidad de <a href="http://cdn.fmartingr.com/blog/uploads/2012/12/tvshows2.png">listas de torrents personalizadas</a> con filtrado.</li>
+<li>Organización automática de capítulos en carpetas y con nomenclatura específica.</li>
+<li>Sincronización de capítulos con <a href="http://gomiso.com/">Miso</a>.</li>
+<li><a href="https://github.com/victorpimentel/TVShows">La posibilidad de contribuir al proyecto</a>.</li>
+</ul>
+
+
+<p><strong>Plataforma:</strong> Mac OS X <br/>
+<strong>Página web:</strong> <a href="http://tvshowsapp.com/">TVShowsApp</a> (<a href="https://github.com/victorpimentel/TVShows">Github</a>)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Capturas de pantalla en Mac OS X sin sombreado]]></title>
+    <link href="http://blog.fmartingr.com/2012/12/15/capturas-de-pantalla-en-mac-sin-sombreado/"/>
+    <updated>2012-12-15T02:30:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/12/15/capturas-de-pantalla-en-mac-sin-sombreado</id>
+    <content type="html"><![CDATA[<p>Esto es un muy breve y sencillo tip para los usuarios que intentéis hacer capturas de pantalla en MAC con la típica combinación <code>CMD + ALT + 4</code> y no queráis la sombra en la ventana como esta:</p>
+
+<p><img class="center" src="http://cdn.fmartingr.com.s3.amazonaws.com/blog/uploads/2012/12/screenshot-with-shadow.png"></p>
+
+<p>Para ello, tenéis que ir a <code>Applications &gt; Utilities &gt; Grab</code> -o lanzarlo como mejor queráis-, y en el menú <em>Capture</em> darle a <em>Window</em>. También tenéis la combinación de teclas <code>SHIFT + CMD + W</code>. El resultado será este:</p>
+
+<p><img class="center" src="http://cdn.fmartingr.com.s3.amazonaws.com/blog/uploads/2012/12/screenshot-without-shadow.png"></p>
+
+<p>Es bastante más limpio según para qué usos, y para el blog me viene bastante bien. Intentaré buscar algo mejor o una tarea de automator/alfred para poder realizarlas más fácilmente y la comentaré.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: Mou]]></title>
+    <link href="http://blog.fmartingr.com/2012/12/09/appsunday-mou/"/>
+    <updated>2012-12-09T12:00:00+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/12/09/appsunday-mou</id>
+    <content type="html"><![CDATA[<blockquote><p>Bienvenido a #AppSunday, mi pequeño rincón semanal en el blog dedicado a explorar y mostrar aplicaciones que uso en mi día a día.</p></blockquote>
+
+<p>Hoy os vengo a hablar de <strong>Mou</strong>, un editor de texto <em>WYSIWYG</em> en formato <em>Markdown</em> que tanto se usa en sistemas de repositorios como Github/Bitbucket y en otros muchos sitios, como en este mismo blog.</p>
+
+<p>Markdown es un formato de tipado escrito en texto plano que busca ser legible tanto a la hora de escribirlo como de leerlo. Si estás leyendo esta entrada posiblemente ya lo conocerás, pero si no es el caso infórmate en <a href="http://es.wikipedia.org/wiki/Markdown">la wikipedia</a> o en <a href="http://daringfireball.net/projects/markdown/">la página web oficial</a>.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com.s3.amazonaws.com/blog/uploads/2012/12/mou.png" title="&#34;Escribiendo este post con Mou&#34;" alt="&#34;Escribiendo este post con Mou&#34;"></p>
+
+<p>Mou ahora mismo se encuentra en fase beta y tiene algunos bugs, pero en su mayor parte es muy fluido y se puede trabajar perfectamente con él -siempre y cuando no utilices el comando deshacer…-. Cuando la beta termine será un aplicación de pago, aunque el autor promete dar licencias a toda la gente que ha donado.</p>
+
+<p>Algunas características que tiene:</p>
+
+<ul>
+<li>Edición en tiempo real con renderizado modificable en CSS</li>
+<li>Es compatible con versiones de OS X</li>
+<li>Tiene corrector ortográfico</li>
+<li>Soporta varios temas para el código</li>
+<li>Fórmulas usando MathJax [<a href="http://cl.ly/JfGB">imagen</a>]</li>
+<li>Posibilidad de postear directamente en <em>Tumblr</em> y <em>Scriptogr.am</em> (no los uso)</li>
+</ul>
+
+
+<p>Este programa me viene muy bien para escribir los posts del blog y editar los <em>README</em> de los proyectos, pero también hay una alternativa llamada <a href="http://markable.in/">Markable</a> que es <strong>completamente online</strong> y utilizo bastante -porque me permite poder editar los ficheros tanto en casa como en el trabajo-.</p>
+
+<p><strong>Plataforma:</strong> Mac OS X<br/>
+<strong>Alternativa</strong> <a href="http://markable.in/">Markable.in</a><br/>
+<strong>Página web:</strong> <a href="http://www.mouapp.com/">Mou</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Policy de S3 para tener un bucket con acceso lectura público]]></title>
+    <link href="http://blog.fmartingr.com/2012/11/23/policy-de-s3-para-tener-un-bucket-con-acceso-lectura-publico/"/>
+    <updated>2012-11-23T11:36:42+01:00</updated>
+    <id>http://blog.fmartingr.com/2012/11/23/policy-de-s3-para-tener-un-bucket-con-acceso-lectura-publico</id>
+    <content type="html"><![CDATA[<p>Después de haber migrado el blog a un servicio PaaS -que ya comentaré en otra entrada-, tuve el problemilla de que el espacio en disco era volatil y tenía que guardar las imágenes y demás en un servidor o CDN a parte. Ya puestos, a tirar la casa por la ventana, decidí usar S3.</p>
+
+<p>Creé un bucket que voy a usar como CDN a partir de ahora, pero trasteando vi que los permisos había que incluirlos por fichero, lo cual era un engorro. Investigando encontré las Policy, que son cadenas JSON puedes indicar propiedades a todo el Bucket.</p>
+
+<p>Pues bien, para hacer un bucket público al completo lo que tenéis que poner en vuestras policy es esto:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;2008-10-17&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;Statement&quot;</span><span class="o">:</span> <span class="p">[{</span>
+</span><span class='line'>        <span class="s2">&quot;Sid&quot;</span><span class="o">:</span> <span class="s2">&quot;AllowPublicRead&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s2">&quot;Effect&quot;</span><span class="o">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s2">&quot;Principal&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>            <span class="s2">&quot;AWS&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
+</span><span class='line'>        <span class="p">},</span>
+</span><span class='line'>        <span class="s2">&quot;Action&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;s3:GetObject&quot;</span><span class="p">],</span>
+</span><span class='line'>        <span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;arn:aws:s3:::&lt;nombre del bucket&gt;/*&quot;</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">}]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Sustituís <nombre del bucket> por el nombre del vuestro y lo aplicáis. Con esto tendréis todo el contenido de vuestro bucket disponible para todo el mundo, pero si queréis ser más restrictivos y hacer pública solo una carpeta lo especificáis en el atributo Resource:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;arn:aws:s3:::&lt;nombre del bucket&gt;/&lt;carpeta&gt;/*&quot;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Espero que os sirva de ayuda.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[¿Qué he hecho en los últimos seis meses?]]></title>
+    <link href="http://blog.fmartingr.com/2012/07/01/que-he-hecho-en-los-ultimos-seis-meses/"/>
+    <updated>2012-07-01T05:00:26+02:00</updated>
+    <id>http://blog.fmartingr.com/2012/07/01/que-he-hecho-en-los-ultimos-seis-meses</id>
+    <content type="html"><![CDATA[<ul>
+<li>He empezado a aprender dos lenguajes nuevos de programación (Cocoa Mobile / Python).</li>
+<li>Me he planteado un par de retos personales -que probablemente no cumpla este año&#8230;-.</li>
+<li>He solventado una duda existencial que me venía mordiendo hace muchos años.</li>
+<li>Por primera vez asistí a eventos de programación y conocí a frikazos como yo.</li>
+<li>He creado miras de futuro para mi empresa.</li>
+<li>He creado un montón de dudas nuevas.</li>
+<li>He tenido la etapa de mayor carga de trabajo de toda mi vida y carrera profesional, estando a punto de dejar mi trabajo.</li>
+<li>Descubrí el dubstep, que en contra de lo que pueda parecer, me ayuda a concentarme para programar.</li>
+<li>He empezado un proyecto personal nuevo como inicio real en el open source cuando consiga terminarlo.</li>
+<li>A su vez, he empezado un proyecto profesional a largo plazo con unos amigos.</li>
+<li>He fundado una empresa nueva.</li>
+<li>Ha comenzado un proceso de cambio en mi empresa, y empieza por un cambio de oficina.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Organizar nuestros modelos de django en carpetas]]></title>
+    <link href="http://blog.fmartingr.com/2012/06/28/organizar-nuestros-modelos-de-django-en-carpetas/"/>
+    <updated>2012-06-28T06:23:14+02:00</updated>
+    <id>http://blog.fmartingr.com/2012/06/28/organizar-nuestros-modelos-de-django-en-carpetas</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://cdn.fmartingr.com/blog/uploads/2012/06/django-model-folder-example.png">
+Estaba yo aquí con mi insomnio habitual (¡y sin café de por medio!) trasteando con django un poco cuando me he dado cuenta de que mi ficherico <em>models.py</em> se me estaba haciendo <del>algo</del> muy incómodo de mantener, y yo que estaba pensando un poco que python es muy <em>másmola</em> y tal. Alguna manera ha de haber de mejorar esta cosa.</p>
+
+<p>Pues bien, después de indagar un poco por internet y demás, ver algunas listas de correo he encontrado algo que me resulta bastante cómodo.</p>
+
+<p>Pues bien, en mi caso dentro de la carpeta de mi app he creado otra llamada <strong>model</strong> -tengo la costumbre de usar la nomenclatura en singular-, y ahí un fichero .py por cada modelo y a su vez el modelo de la zona de administración.</p>
+
+<p>¿Cómo hacemos funcionar bien algo así? Bien, primero en el <em>Meta</em> de nuestro modelo tenemos que añadir el app_label. Por defecto, django usa el nombre del paquete (HAHAHAHAHA) en el que están los modelos como etiqueta de app por defecto, por lo que como he metido los mios en un paquete llamado &#8220;model&#8221;, usa eso de app_label, por lo que manualmente le he especificado el correcto:</p>
+
+<figure class='code'><figcaption><span>item.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span class='line'>    <span class="c">#...</span>
+</span><span class='line'>    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">app_label</span> <span class="o">=</span> <span class="s">&#39;database&#39;</span>
+</span><span class='line'>        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A su vez, en el <code>models.py</code> incluímos todos nuestros modelos: <code>from model import *</code></p>
+
+<p>Y para que esto funcione, hay que configurar nuestro paquetillo <em>models</em> e incluir en el todos los modelos que queramos que se autoimporten, por lo que así lo especificamos en nuestro <strong>APPNAME/model/<strong>init</strong>.py</strong>:</p>
+
+<figure class='code'><figcaption><span>app/model/__init__.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">database.model.version</span> <span class="kn">import</span> <span class="n">Version</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">database.model.icon</span> <span class="kn">import</span> <span class="n">Icon</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">database.model.item</span> <span class="kn">import</span> <span class="n">Item</span>
+</span><span class='line'>
+</span><span class='line'> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Version&#39;</span><span class="p">,</span> <span class="s">&#39;Icon&#39;</span><span class="p">,</span> <span class="s">&#39;Item&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Mucho más simple de mantener que todo en el mismo fichero. La verdad que lo he agradecido mucho, espero que os sirva de ayuda.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[El tiempo]]></title>
+    <link href="http://blog.fmartingr.com/2012/05/26/el-tiempo/"/>
+    <updated>2012-05-26T22:36:26+02:00</updated>
+    <id>http://blog.fmartingr.com/2012/05/26/el-tiempo</id>
+    <content type="html"><![CDATA[<p><img src="http://cdn.fmartingr.com/blog/uploads/2012/05/4012692244_8e8ac2a9ba_b.jpg" alt="" /></p>
+
+<blockquote><p>&#8220;El tiempo es limitado, así que más vale que cada mañana me despierte fresco y sabiendo que tengo una sola oportunidad de vivir este día de la forma correcta, y al final juntar todos mis días en una vida de acción y propósito.&#8221;
+- <a href="http://es.wikipedia.org/wiki/Lance_Armstrong">Lance Armstrong</a></p></blockquote>
+
+<p>El tiempo. Ese pequeño concepto que conocemos pero ignoramos completamente en nuestro día a día, y al que deberíamos dar mucha más importancia de la que se le da.</p>
+
+<p>Hay que tratar al tiempo <strong>como un bien que poseemos</strong>. Sí, como un bien, hay que saber valorarlo y cómo gastarlo, puesto que al contrario de otros, <strong>el tiempo es irrecuperable.</strong> Es algo limitado y por lo tanto deberíamos ser muy conscientes de en qué o quién lo gastamos, así como saber valorar cuando una persona quiere compartir su bien más preciado contigo.</p>
+
+<p>Démonos cuenta de lo que el tiempo significa realmente, dado que es bien más preciado que nosotros podamos tener, puesto que todos lo tenemos pero ninguno sabemos de cuanto de él disponemos.</p>
+
+<p><strong>Fotografía |</strong> <a href="http://www.flickr.com/photos/cameliatwu/4012692244/">Dedication HDR por CarmelaTWU</a></p>
+]]></content>
+  </entry>
+  
+</feed>

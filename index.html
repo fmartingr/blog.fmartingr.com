@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Felipe Martín</title>
+  <meta name="author" content="Felipe">
+
+  
+  <meta name="description" content="Recently I&#8217;ve started the migration of my company&#8217;s servers to a new provider. After checking that the OS installed on the -now- old &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.fmartingr.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <link href="/atom.xml" rel="alternate" title="Felipe Martín" type="application/atom+xml">
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-274435-11']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body >
+	<div class="all">
+		<section class="sidebar align-center">
+			<header>
+				<a href="/">
+	<div class="profile_picture"></div>
+	<h1>Felipe Martín</h1>
+</a>
+<div class="slogan hide-mobile">
+	Be incomprehensible.<br />
+	If they can't understand, <br />
+	they can't disagree.
+</div>
+<div class="social">
+	<a href="http://twitter.com/fmartingr">
+		<div class="button twitter">
+			<span class="icon-twitter"></span>
+		</div>
+	</a>
+	<a href="http://www.linkedin.com/in/felipemartingarcia">
+		<div class="button linkedin">
+			<span class="icon-linkedin"></span>
+		</div>
+	</a>
+	<a href="http://last.fm/user/pyronhell">
+		<div class="button lastfm">
+			<span class="icon-lastfm"></span>
+		</div>
+	</a>
+	<a href="http://github.com/fmartingr">
+		<div class="button github">
+			<span class="icon-github"></span>
+		</div>
+	</a>
+	<a href="mailto:me@fmartingr.com">
+		<div class="button email">
+			<span class="icon-envelope"></span>
+		</div>
+	</a>
+	<a href="/atom.xml">
+		<div class="button rss">
+			<span class="icon-rss"></span>
+		</div>
+	</a>
+</div>
+<!--
+<div class="links">
+	<a href="http://fmartingr.github.com/">
+		<div class="button auto github">
+			<span class="icon-github"></span> Github projects
+		</div>
+	</a>
+</div>
+-->
+
+			</header>
+		</section>
+		<section class="content">
+			<div class="wrapper">
+				<div class="blog-index">
+  
+  
+  
+    <article>
+      <div class="title">
+    
+      <h1 class="entry-title"><a href="/2013/04/27/server-going-slow-after-iptables-configuration-try-this/">Server going slow after IPTables configuration? Try this</a></h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-27T22:45:00+02:00" pubdate data-updated="true">2013-04-27</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="/2013/04/27/server-going-slow-after-iptables-configuration-try-this/#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+    <div class="entry-content"><p>Recently I&#8217;ve started the migration of my company&#8217;s servers to a new provider. After checking that the OS installed on the -now- old servers was Ubuntu 8.04 (holy shit), I decided to make a fresh install of CentOS 6.3, cleaning up all the servers contents and setting up everything from scratch.</p>
+
+<p>After setting my iptables rules (INPUT whitelisted, OUTPUT accept all) I noticed a big delay on every connection made to my server. After checking a lot of things, these two solved the issue:</p>
+
+<h2>Enable unilimited traffic on your loopback interface</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>iptables -A INPUT -i lo  -j ACCEPT
+</span><span class='line'>iptables -A OUTPUT -o lo -j ACCEPT
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Enable traffic for connections started by your server</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hope this helps!</p>
+</div>
+    
+    
+  <div class="clear-both"></div>
+  
+</div>
+
+    </article>
+  
+  
+    <article>
+      <div class="title">
+    
+      <h1 class="entry-title"><a href="/2013/02/24/fringe-series-finale-my-oppinion/">Fringe series finale: My opinion</a></h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-24T23:25:00+01:00" pubdate data-updated="true">2013-02-24</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="/2013/02/24/fringe-series-finale-my-oppinion/#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+    <div class="entry-content"><p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/02/fringe.png"></p>
+
+<blockquote><p>Attention: This entry contains <strong>huge</strong> spoilers about the series finale of Fringe. Also, lots of negative opinions, if you like the series or don&#8217;t understand how sarcasm works, leave.</p></blockquote>
+
+<p>I&#8217;ve spent the last weeks watching the show from where I dropped it -the third season- and I can say that the final season is the worst of all. I don&#8217;t know if the show was losing audicence, if they only wanted to finish it, because I don&#8217;t know another reason to kill the show this way.</p>
+
+<p>From now on I&#8217;m talking only about the fifth season, as should be the more important and the one all of you -and myself- have fresh.</p>
+
+<ul>
+<li>The most stupid thing I remember: The tapes with the plan to get rid of the observers.<br/>
+Walter had a plan to defeat the observers, a plan that he never tell anyone until is destroyed from his mind by an observer. But, hey! He must have recorded the plan or something. I mean, he is a very smart one. He did. He recorded that he have a plan on a tape, but for knowing what it is you have to swim accross a sea of <em>amber</em> to find another eight tapes with the details. OH HOW SMART IS THAT! Just a stupid reason to keep characters busy. Without this the entire fifth season is done in two-three chapters.</li>
+<li>The observers powers.<br/>
+So, I can read minds and predict -in some way- the future. How can SOMEONE DEFEAT YOU IF YOU CAN PREDICT WHAT ARE THEY GOING TO DO. And more, you SAW in Walter&#8217;s mind what the plan was. The observers boss is just… asshole.</li>
+<li>The plan.<br/>
+Tons of VHS tapes with a specific plan of how to build a machine to generate a wormhole, but in the last moment, hey! But the observers generate wormholes for their supplies, let&#8217;s use that! Let&#8217;s put humanity&#8217;s hope on a last moment change! :D</li>
+<li>Olivia&#8217;s powers.<br/>
+You used your last <em>cortexiphan</em> -or however it&#8217;s written- on revive yourself from a headshot (LOL), then you get injected fours times, each for every dimension swap you have to do. Despite the fact that just this sucks, there&#8217;s more: William Bell needed a lot of time just to unleash her powers, and now, is not that she have the powers <em>active</em>, but also she knows how to swap dimensions on her own will. Fascinating. Also, from this point Olivia don&#8217;t need fear to use her powers.</li>
+<li>The observers chip.<br/>
+Peter removes a chip from a observer and the observer die. Removes it from himself and nothing happen. And I&#8217;m not talking about how deep the chip was jumping insinde the brain when Walter did the tests… just WTF, die already.</li>
+<li>Gun&#8217;s agains the observers.<br/>
+This is just a little thing: in <em>our</em> universe, Bell design some improved guns -that apparently only the rebels have 21 years in the future…- that shoots faster to deal with the observers. When Olivia travels to the alternative universe, they don&#8217;t have that guns but can kill observers without a problem.</li>
+<li>Time travel:<br/>
+Apparently there&#8217;s only one shot for a single one to time-travel: September takes it. But when he&#8217;s killed nothing prevents Walter for time traveling.</li>
+<li>Olivia vs. Observer Boss.<br/>
+Apparently the energy needed to move a truck with the cortexiphan powers is the electricity of the entire New York. That&#8217;s efficient use of energy.</li>
+</ul>
+
+
+<p>There&#8217;s more things, I&#8217;m sure, but I don&#8217;t remember just now. Besides, there&#8217;s more than enough here.</p>
+</div>
+    
+    
+  <div class="clear-both"></div>
+  
+</div>
+
+    </article>
+  
+  
+    <article>
+      <div class="title">
+    
+      <h1 class="entry-title"><a href="/2013/02/23/manga-recommendation-psyren/">Manga recommendation: Psyren</a></h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-23T22:00:00+01:00" pubdate data-updated="true">2013-02-23</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="/2013/02/23/manga-recommendation-psyren/#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+    <div class="entry-content"><p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/02/psyren-cover.png" title="&#34;Psyren&#34;" alt="&#34;Psyren&#34;"></p>
+
+<h3>Summary</h3>
+
+<p>Psyren follows the adventures of Ageha Yoshina, a high school student who is chosen by Nemesis Q as a participant in the Psyren games. The games take place in a world known initially as Psyren, which is revealed to be the real world a decade in the future. Ageha and his friends attempt to alter the future and save the world from becoming Psyren.</p>
+
+<p><strong>Volumes</strong>: 16<br/>
+<strong>Chapters</strong>: 145 (finished)<br/>
+<strong>Genre</strong>: Action, Adventure, Game, Romance, Sci-Fi, Shounen, Super Power, Supernatural, Psychological<br/>
+<strong>Story/Art</strong>: Tokashi Iwashiro</p>
+</div>
+    
+    
+  <div class="clear-both"></div>
+  
+</div>
+
+    </article>
+  
+  
+    <article>
+      <div class="title">
+    
+      <h1 class="entry-title"><a href="/2013/02/23/where-to-buy-warcraft-books-ordered-by-storyline/">Where to buy Warcraft books ordered by storyline</a></h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-23T02:15:00+01:00" pubdate data-updated="true">2013-02-23</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="/2013/02/23/where-to-buy-warcraft-books-ordered-by-storyline/#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+    <div class="entry-content"><blockquote><p>I think is time to start publishing all the drafts that I&#8217;m just storing. I just want a way to schedule posts :_</p></blockquote>
+
+<p>I&#8217;ve reunited a list with all the warcraft books sorted by the storyline of the lore. Some of &#8216;em occur at the same time so if you see the same book twice that&#8217;s the reason.</p>
+
+<p>More info on <a href="http://www.wowwiki.com/Story_guide">WoWWiki</a>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Book name </th>
+<th> Amazon COM </th>
+<th> Amazon UK </th>
+<th> Kindle </th>
+<th> BookDepository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-game timeline events</strong> </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The war of the ancients Trilogy </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- The Well of Eternity </td>
+<td> <a href="http://www.amazon.com/The-Well-Eternity-WarCraft-Ancients/dp/0743471199/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Well-Eternity-Bk-Ancients/dp/0743471199/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Well-Eternity-ebook/dp/B000FC1LP6/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Well-Eternity-Bk-1-Richard-Knaak/9780743471190">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Demon Soul </td>
+<td> <a href="http://www.amazon.com/Demon-Soul-Warcraft-Ancients-Book/dp/0743471202/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Demon-Soul-Bk-Ancients/dp/0743471202/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Demon-Soul-ebook/dp/B000QBYENC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Demon-Soul-Bk-2-Richard-Knaak/9780743471206">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Sundering </td>
+<td> <a href="http://www.amazon.com/Sundering-Warcraft-Ancients-Trilogy-Book/dp/0743471210/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/gp/product/0743471210/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Sundering-Bk-War-Ancients/dp/0743471210/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Sundering-Bk-3-Richard-Knaak/9780743471213">BookDepository</a></td>
+</tr>
+<tr>
+<td>War of the Shifting Sands [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/shifting-sands/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rise of the Horde </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Rise-Horde-No/dp/0743471385/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Rise-Horde-No-World-Warcraft/dp/0743471385/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Rise-Horde-ebook/dp/B000QCTN50/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Rise-Horde-Rise-Horde-No-4-Christie-Golden/9780743471381">BookDepository</a></td>
+</tr>
+<tr>
+<td>Unbroken [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/unbroken/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Warcraft: Orcs and Humans</strong> </td>
+<td> <em>The first war</em> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last Guardian </td>
+<td> <a href="http://www.amazon.com/Last-Guardian-Warcraft-Book-No-3/dp/0671041517/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Last-Guardian-No-3/dp/0671041517/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/The-Warcraft-Last-Guardian-ebook/dp/B000FC0QTS/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Last-Guardian-No3-Jeff-Grubb/9780671041519">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>Warcraft II</strong> </td>
+<td> <em>The second war</em> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Tides of Darkness </td>
+<td> <a href="http://www.amazon.com/Tide-Darkness-Warcraft-Aaron-Rosenberg/dp/1416539905/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Tides-Darkness-World-Warcraft-Rosenberg/dp/1416539905/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Tides-Darkness-ebook/dp/B000UZQJIC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Tides-Darkness-Aaron-Rosenberg/9781416539902">BookDepository</a></td>
+</tr>
+<tr>
+<td>Beyond the Dark Portal </td>
+<td> <a href="http://www.amazon.com/Beyond-Dark-Portal-World-Warcraft/dp/1416550860/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Beyond-Dark-Portal-World-Warcraft/dp/1416550860/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Beyond-Portal-ebook/dp/B0013TX8YC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Beyond-Dark-Portal-Aaron-Rosenberg/9781416550860">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>Post-Warcraft II</strong> &amp; <strong>Pre-Warcraft III</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Day of the Dragon </td>
+<td> <a href="http://www.amazon.com/Day-Dragon-WarCraft-Book-No-1/dp/0671041525/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Day-Dragon-No-1/dp/0671041525/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Day-Dragon-No-1-ebook/dp/B000FBJHTY/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Day-Dragon-No1-Richard-Knaak/9780671041526">BookDepository</a></td>
+</tr>
+<tr>
+<td>Lord of the Clans </td>
+<td> <a href="http://www.amazon.com/Lord-Clans-Warcraft-Book-2/dp/0743426908/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Lord-Clans-No/dp/0743426908/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Lord-Clans-2-ebook/dp/B000FC0RC4/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Lord-Clans-No-2-Christie-Golden/9780743426909">BookDepository</a></td>
+</tr>
+<tr>
+<td>Of Blood and Honor </td>
+<td> <a href="http://www.amazon.com/Warcraft-Blood-Honor-ebook/dp/B000FC0WII/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Blood-Honor-ebook/dp/B003ZDOVGI/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Of-Blood-Honor-ebook/dp/B000FC0WII/">Kindle</a> </td>
+<td> &#8211;</td>
+</tr>
+<tr>
+<td>Road to Damnation [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/damnation/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Warcraft III: Reign of Chaos</strong> </td>
+<td> <em>The third war</em> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Arthas: Rise of the Lich King </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Arthas-Rise-Lich/dp/143915760X/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Arthas-Rise-Lich-World-Warcraft/dp/143915760X/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-of-Warcraft-Arthas-ebook/dp/B001NLL6LM/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/World-Warcraft-Arthas-Christie-Golden/9781416550778">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>Warcraft III: The Frozen Throne</strong> </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The war of the ancients Trilogy </td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- The Well of Eternity </td>
+<td> <a href="http://www.amazon.com/The-Well-Eternity-WarCraft-Ancients/dp/0743471199/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Well-Eternity-Bk-Ancients/dp/0743471199/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Well-Eternity-ebook/dp/B000FC1LP6/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Well-Eternity-Bk-1-Richard-Knaak/9780743471190">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Demon Soul </td>
+<td> <a href="http://www.amazon.com/Demon-Soul-Warcraft-Ancients-Book/dp/0743471202/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Demon-Soul-Bk-Ancients/dp/0743471202/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/Warcraft-Ancients-Demon-Soul-ebook/dp/B000QBYENC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Demon-Soul-Bk-2-Richard-Knaak/9780743471206">BookDepository</a></td>
+</tr>
+<tr>
+<td>- The Sundering </td>
+<td> <a href="http://www.amazon.com/Sundering-Warcraft-Ancients-Trilogy-Book/dp/0743471210/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/gp/product/0743471210/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.co.uk/Warcraft-Sundering-Bk-War-Ancients/dp/0743471210/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Sundering-Bk-3-Richard-Knaak/9780743471213">BookDepository</a></td>
+</tr>
+<tr>
+<td>Cycle of Hatred </td>
+<td> <a href="http://www.amazon.com/Cycle-Hatred-World-Warcraft-Bk/dp/0743471369/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Cycle-Hatred-World-Warcraft-Paperback/dp/0743471369/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Cycle-Hatred-ebook/dp/B000GCFXKY/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Warcraft-Cycle-Hatred-Bk-4-Keith-DeCandido/9780743471367">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>World of Warcraft</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>War of the Shifting Sands [<em>Short story</em>] </td>
+<td> <a href="http://us.battle.net/wow/en/game/lore/short-story/shifting-sands/1">Battle.net</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>WoW: The Burning Crusade</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Night of the Dragon </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Dragon-Richard-Knaak/dp/0743471377/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Night-Dragon-World-Warcraft-Richard/dp/0743471377/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Night-Dragon-ebook/dp/B001FA0I2Y/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Night-Dragon-Richard-Knaak/9780743471374">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>WoW: Wrath of the Lich King</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Stormrage </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Stormrage-Richard-Knaak/dp/1439189463/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Stormrage-World-Warcraft-Richard-Knaak/dp/1439189463/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-of-Warcraft-Stormrage-ebook/dp/B0037714S0/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Stormrage-Richard-Knaak/9781439189467">BookDepository</a></td>
+</tr>
+<tr>
+<td>The Shattering: Prelude to Cataclysm </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Shattering-Prelude-Cataclysm/dp/1416550747/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/World-Warcraft-Shattering-Prelude-Cataclysm/dp/1416550747/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-The-Shattering-ebook/dp/B003L785VK/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Shattering-Christie-Golden/9781439172742">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>WoW: Cataclysm</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wolfheart </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Wolfheart-Richard-Knaak/dp/1451605765/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Wolfheart-World-Warcraft-Cataclysm-Richard/dp/1451605765/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-of-Warcraft-Wolfheart-ebook/dp/B004T4KXLE/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Wolfheart-Richard-Knaak/9781451605761">BookDepository</a></td>
+</tr>
+<tr>
+<td>Thrall: Twilight of the Aspects </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Twilight-Aspects-Gallery/dp/B005X4985G/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Thrall-Twilight-Aspects-Warcraft-Cataclysm/dp/143919663X/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Twilight-Aspects-ebook/dp/B004G8QNGC/">Kindle</a> </td>
+<td> <a href="http://www.bookdepository.co.uk/Thrall-Christie-Golden/9781416550884">BookDepository</a></td>
+</tr>
+<tr>
+<td>Jaina Proudmore: Tides of War </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Jaina-Proudmoore-Tides/dp/1416550763/">Amazon.com</a> </td>
+<td> <a href="http://www.amazon.co.uk/Jaina-Proudmore-Tides-Warcraft-Pandaria/dp/1416550763/">Amazon.co.uk</a> </td>
+<td> <a href="http://www.amazon.com/World-Warcraft-Jaina-Proudmoore-ebook/dp/B0061NXDO0/">Kindle</a> </td>
+<td>  <a href="http://www.bookdepository.co.uk/Jaina-Proudmore-Tides-War-Christie-Golden/9781416550761">BookDepository</a></td>
+</tr>
+<tr>
+<td><strong>WoW: Mists of Pandaria</strong> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#8211; </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    
+    
+  <div class="clear-both"></div>
+  
+</div>
+
+    </article>
+  
+  
+    <article>
+      <div class="title">
+    
+      <h1 class="entry-title"><a href="/2013/01/20/manga-recommendation-kamisama-no-iutoori/">Manga Recommendation: Kamisama no Iutoori (Fujimura Akeji)</a></h1>
+    
+</div>
+
+<div class="info">
+  <i class="icon-calendar"></i> 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-20T21:00:00+01:00" pubdate data-updated="true">2013-01-20</time> &nbsp;&nbsp;
+  
+  <i class="icon-comment-alt"></i> <a href="/2013/01/20/manga-recommendation-kamisama-no-iutoori/#disqus_thread">Comments</a>
+  
+</div>
+
+<div class="post">
+  
+    <div class="entry-content"><p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/kamisama-no-iutoori.jpg" title="&#34;Kamisama no Iutoori (FUJIMURA Akeji)&#34;" alt="&#34;Kamisama no Iutoori (FUJIMURA Akeji)&#34;"></p>
+
+<h3>Summary</h3>
+
+<p>Takahata Shun&#8217;s day at high school begins just as normal and boring as ever, but it doesn&#8217;t end that way. After his teacher&#8217;s head explodes, he and his classmates find themselves forced to play children&#8217;s games, such as Daruma ga Koronda (a game like Red Light/Green Light), with deadly stakes. With no idea who is behind this mysterious deadly game session, and no way of knowing when it will finally end, the only thing Shun and other students can do is keep trying to win&#8230;</p>
+
+<p><strong>Volumes</strong>: 5<br/>
+<strong>Chapters</strong>: 21 (finished)<br/>
+<strong>Genre</strong>: Action, Horror, School, Shônen, Supernatural<br/>
+<strong>Story</strong>: Muneyuki Kaneshiro<br/>
+<strong>Art</strong>: Akeji Fujimura</p>
+
+<p>Thanks to <a href="http://twitter.com/rsanchezbalo">@rsanchezbalo</a> for his recommendation!</p>
+</div>
+    
+    
+  <div class="clear-both"></div>
+  
+</div>
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/page/2/">&larr; Anteriores</a>
+    
+    
+  </div>
+</div>
+
+			</div>
+		</section>
+		<footer class="align-center">
+			<div class="license">
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+</div>
+<div class="powered-by">
+	<a href="http://github.com">Github</a> &amp; <a href="http://octopress.org/">Octopress</a>
+</div>
+
+		</footer>
+	</div>
+<script src="/javascripts/site.js"></script>
+<script> updateSizes(); </script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'fmartingr';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
