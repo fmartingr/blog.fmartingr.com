@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Games | Felipe Martín]]></title>
-  <link href="http://blog.fmartingr.com//blog/categories/games/atom.xml" rel="self"/>
-  <link href="http://blog.fmartingr.com//"/>
-  <updated>2013-02-27T22:18:10+01:00</updated>
-  <id>http://blog.fmartingr.com//</id>
+  <link href="http://blog.fmartingr.com/blog/categories/games/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com/"/>
+  <updated>2013-02-27T22:19:01+01:00</updated>
+  <id>http://blog.fmartingr.com/</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tweeria: The MMORPG that people without time can play]]></title>
-    <link href="http://blog.fmartingr.com//2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play/"/>
+    <link href="http://blog.fmartingr.com/2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play/"/>
     <updated>2013-01-14T23:00:00+01:00</updated>
-    <id>http://blog.fmartingr.com//2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play</id>
+    <id>http://blog.fmartingr.com/2013/01/14/tweeria-the-mmorpg-that-people-without-time-can-play</id>
     <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/tweeria/header.png" title="&#34;Tweeria summary&#34;" alt="&#34;Tweeria summary&#34;"></p>
 
 <p>Many of us -or maybe not, but let's assume that- have played at least one <em>MMORPG</em> game in our life and we know that it could be <em>very</em> time consuming. Level up, going to instances, getting better year… and if you was <em>hardcore</em> enough: scheduled raids.</p>

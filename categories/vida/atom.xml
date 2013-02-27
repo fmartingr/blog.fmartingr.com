@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Vida | Felipe Martín]]></title>
-  <link href="http://blog.fmartingr.com//blog/categories/vida/atom.xml" rel="self"/>
-  <link href="http://blog.fmartingr.com//"/>
-  <updated>2013-02-27T22:18:10+01:00</updated>
-  <id>http://blog.fmartingr.com//</id>
+  <link href="http://blog.fmartingr.com/blog/categories/vida/atom.xml" rel="self"/>
+  <link href="http://blog.fmartingr.com/"/>
+  <updated>2013-02-27T22:19:01+01:00</updated>
+  <id>http://blog.fmartingr.com/</id>
   <author>
     <name><![CDATA[Felipe]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[¿Qué he hecho en los últimos seis meses?]]></title>
-    <link href="http://blog.fmartingr.com//2012/07/01/que-he-hecho-en-los-ultimos-seis-meses/"/>
+    <link href="http://blog.fmartingr.com/2012/07/01/que-he-hecho-en-los-ultimos-seis-meses/"/>
     <updated>2012-07-01T05:00:26+02:00</updated>
-    <id>http://blog.fmartingr.com//2012/07/01/que-he-hecho-en-los-ultimos-seis-meses</id>
+    <id>http://blog.fmartingr.com/2012/07/01/que-he-hecho-en-los-ultimos-seis-meses</id>
     <content type="html"><![CDATA[<ul>
 <li>He empezado a aprender dos lenguajes nuevos de programación (Cocoa Mobile / Python).</li>
 <li>Me he planteado un par de retos personales -que probablemente no cumpla este año...-.</li>
@@ -38,9 +38,9 @@
   
   <entry>
     <title type="html"><![CDATA[El tiempo]]></title>
-    <link href="http://blog.fmartingr.com//2012/05/26/el-tiempo/"/>
+    <link href="http://blog.fmartingr.com/2012/05/26/el-tiempo/"/>
     <updated>2012-05-26T22:36:26+02:00</updated>
-    <id>http://blog.fmartingr.com//2012/05/26/el-tiempo</id>
+    <id>http://blog.fmartingr.com/2012/05/26/el-tiempo</id>
     <content type="html"><![CDATA[<p><img src="http://cdn.fmartingr.com/blog/uploads/2012/05/4012692244_8e8ac2a9ba_b.jpg" alt="" /></p>
 
 <blockquote><p>"El tiempo es limitado, así que más vale que cada mañana me despierte fresco y sabiendo que tengo una sola oportunidad de vivir este día de la forma correcta, y al final juntar todos mis días en una vida de acción y propósito."
@@ -58,9 +58,9 @@
   
   <entry>
     <title type="html"><![CDATA[Más camisetillas (o como ilustrar la entrada anterior)]]></title>
-    <link href="http://blog.fmartingr.com//2012/04/16/mas-camisetillas-o-como-ilustrar-la-entrada-anterior/"/>
+    <link href="http://blog.fmartingr.com/2012/04/16/mas-camisetillas-o-como-ilustrar-la-entrada-anterior/"/>
     <updated>2012-04-16T11:14:18+02:00</updated>
-    <id>http://blog.fmartingr.com//2012/04/16/mas-camisetillas-o-como-ilustrar-la-entrada-anterior</id>
+    <id>http://blog.fmartingr.com/2012/04/16/mas-camisetillas-o-como-ilustrar-la-entrada-anterior</id>
     <content type="html"><![CDATA[<p><strong>Relacionado:</strong> <a href="http://blog.fmartingr.com/2012/04/14/el-nudo-de-la-corbata/">El nudo de la corbata</a></p>
 
 <p><a href="http://cdn.fmartingr.com/blog/uploads/2012/04/frikishirt-0.jpg"><img class="left" src="http://cdn.fmartingr.com/blog/uploads/2012/04/frikishirt-0.jpg" width="300"></a></p>
@@ -75,9 +75,9 @@
   
   <entry>
     <title type="html"><![CDATA[El nudo de la corbata]]></title>
-    <link href="http://blog.fmartingr.com//2012/04/14/el-nudo-de-la-corbata/"/>
+    <link href="http://blog.fmartingr.com/2012/04/14/el-nudo-de-la-corbata/"/>
     <updated>2012-04-14T13:47:55+02:00</updated>
-    <id>http://blog.fmartingr.com//2012/04/14/el-nudo-de-la-corbata</id>
+    <id>http://blog.fmartingr.com/2012/04/14/el-nudo-de-la-corbata</id>
     <content type="html"><![CDATA[<p><img src="http://cdn.fmartingr.com/blog/uploads/2012/04/tie.jpg" alt="" /></p>
 
 <p>Nunca he sido una persona de vestir de traje, he de reconocerlo, por lo que esta entrada va a parecer demasiado imparcial para hablar del tema, pero voy a exponer mi forma de ver el por qué no me gusta vestir de manera "decente" ni en las situaciones en las que el <em>protocolo</em> así lo exige.</p>
