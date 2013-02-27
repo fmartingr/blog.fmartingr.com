@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: AppSunday | Felipe Martín]]></title>
+  <link href="http://fmartingr.github.com/blog/blog/categories/appsunday/atom.xml" rel="self"/>
+  <link href="http://fmartingr.github.com/blog/"/>
+  <updated>2013-02-27T22:16:43+01:00</updated>
+  <id>http://fmartingr.github.com/blog/</id>
+  <author>
+    <name><![CDATA[Felipe]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: Arq]]></title>
+    <link href="http://fmartingr.github.com/blog/2013/01/20/appsunday-arq/"/>
+    <updated>2013-01-20T16:30:00+01:00</updated>
+    <id>http://fmartingr.github.com/blog/2013/01/20/appsunday-arq</id>
+    <content type="html"><![CDATA[<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/main-screen.png" title="&#34;Main ARQ 2 Screen&#34;" alt="&#34;Main ARQ 2 Screen&#34;"></p>
+
+<p>Have you ever heard of <em>TimeMachine</em>? That Apple app that makes backups of your hard drive with a really nice interface to restore backups from finder. Well, Arq is that but without the nice interface and the backups are made to Amazon S3 instead of an external hard drive.</p>
+
+<!-- more -->
+
+
+<p>Backups to internet? Are you crazy? Maybe, but I find this pretty convenient since my MAC is a laptop with two USB ports and I don't want to have one of them always busy with a external hard drive for Time Machine. And by the way, all backups are encrypted.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/exclude-filters.png" title="&#34;I don't want cache files!&#34;" alt="&#34;I don't want cache files!&#34;"></p>
+
+<p>You can filter whatever you don't want to be stored. For example, I have checked the <code>~/Library</code> folder excluding every folder/file with <code>cache</code> on its name, and also I've unchecked manually -left in the screenshot- iTunes and mail folders. Since all my mail accounts are IMAP and my music are synced with iTunes Match I don't really want those being stored.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-arq/s3-budget.png" title="&#34;Please, no more than $4 from S3&#34;" alt="&#34;Please, no more than $4 from S3&#34;"></p>
+
+<p>Arq also let you configure how much money do you want to spend on your S3 Bucket. Just type in how much money -or how much space- you want to have, and Arq will do the calculations. If you're near to your space limit, old files will be removed. I've a $4 limit but my monthly bill has never reached two bucks.</p>
+
+<p>If you don't have a backup solution for your computer is worth giving it a try. Arq has saved my life two times already. Also made a full OS reinstall less more painful.</p>
+
+<blockquote><p><strong>Arq 3 update:</strong> At the time of writing a new version of Arq was released with Amazon Glacier support. Since I have not tested it I can say anything, but apparently have less costs if you don't access frequently to the files and it seems that you can configure S3 and Glacier at the same time.</p></blockquote>
+
+<p>You can download a 30 day trial from <a href="http://www.haystacksoftware.com/arq/">Arq's website</a>, after that, the complete version costs $29, but it's totally worth the price.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: AppCleaner]]></title>
+    <link href="http://fmartingr.github.com/blog/2013/01/13/appsunday-appcleaner/"/>
+    <updated>2013-01-13T19:00:00+01:00</updated>
+    <id>http://fmartingr.github.com/blog/2013/01/13/appsunday-appcleaner</id>
+    <content type="html"><![CDATA[<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-appcleaner/main-interface.png" title="&#34;Main Interface&#34;" alt="&#34;Main Interface&#34;"></p>
+
+<p>If I hate something about uninstalling apps is all the rubbish that is left behind. Windows had that problem and unfortunately OS X have the same curse, but there's some apps that help you removing all that files/folders used for whatever purpose they are. The one that I use its called <strong>AppCleaner</strong> and its freeware.</p>
+
+<!-- more -->
+
+
+<p>The interface is really simple, you have two options: Dragging an app or using the list to look for the one we want to remove. Note here that you can drag&amp;drop the app from wherever it is -I mean, from the Applications folder, downloads folder, a pen drive…- because you may want to remove the configuration files and not the app itself.</p>
+
+<p><img class="no-border center" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-appcleaner/unsintalling-an-app.png" title="&#34;Uninstall interfacece&#34;" alt="&#34;Uninstall interfacece&#34;"></p>
+
+<p>When you select an app, a list will show you all the files it have found and you can select what files you want to remove, click the <em>Delete</em> button and you are set. Simple as that.</p>
+
+<p>It has been a short <em>#AppSunday</em> but you know, the simpler the better ;D.</p>
+
+<p>If you want to check it out, go to <a href="http://www.freemacsoft.net/appcleaner/">AppCleaner's Website</a>.<br/>
+You also have a paid alternative called <a href="http://www.appzapper.com/">AppZapper</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#AppSunday: SublimeText 2]]></title>
+    <link href="http://fmartingr.github.com/blog/2013/01/06/appsunday-sublimetext2/"/>
+    <updated>2013-01-06T12:00:00+01:00</updated>
+    <id>http://fmartingr.github.com/blog/2013/01/06/appsunday-sublimetext2</id>
+    <content type="html"><![CDATA[<blockquote><p>Welcome to #AppSunday, my little weekly space on the blog to review and explore applications I use in my day to day.</p></blockquote>
+
+<p>As promised, welcome to the first <em>#AppSunday</em> of the year. This time I will look into <strong>SublimeText 2</strong>, a very good developing app you all will probably know already.</p>
+
+<!-- more -->
+
+
+<p>I've tried a lot of applications for developing. All we developers have. Looking for an application that fit your needs tend to be the worst part when it comes to software development.</p>
+
+<p>I'm finally using SublimeText for every language except for python/django where I still use <em>pyCharm</em> from time to time -I think pycharm's code completion it's better than sublimetext's one-.</p>
+
+<p>I'm giving the credit of knowing SublimeText to two individuals: first, <a href="http://twitter.com/juanriaza">@juanriaza</a>. Told me about this <strong>a lot</strong> of times, but I really never tested it until <a href="http://twitter.com/jgasteiz">@jgasteiz</a> came to scene. Meet him on the 2012's google Hackaton where he was using SublimeText -the multiple cursor thingy- and I though… <strong>I must try that</strong>.</p>
+
+<h1>What is it?</h1>
+
+<p>Difficult question here. The easy answer is <strong>a text editor</strong>, but it's much more that that.<br/>
+It's not and IDE, but it is.<br/>
+It's complicated.</p>
+
+<p>I say it as an <strong>extendable advanced text editor</strong>. Because it already have a lot of useful functions by its own -I will explain some later-, but also have <a href="http://blog.fmartingr.com/2012/12/21/my-sublimetext2-workspace/">a lot of plugins</a> that are capable of extending the app functionality to a new level.</p>
+
+<h1>What makes ST2 so special?</h1>
+
+<p>Before the screenshots and the features I need to say one thing about working with ST2: <strong>focus on your keyboard, not your mouse</strong>. The entire workflow with ST2 works this way, if you're afraid just don't be, you can be faster without using your mouse and this app it's really helpful with that. ST2 have key bindings for <em>almost</em> every command. With this in mind, the first feature:</p>
+
+<blockquote><p><strong>Note</strong>: From now on I will use OS X keybinds, if you're a Windows/Linux user, replace <code>CMD</code> with <code>Ctrl</code>.</p></blockquote>
+
+<h2>Command palette</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/command-palette.png" title="&#34;The command palette looking for the Install Package command&#34;" alt="&#34;The command palette looking for the Install Package command&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>SHIFT</code> + <code>P</code><br/>
+Brings down a search menu with all the commands the application have. You can move with the cursor or use it's smart search to select the command you're looking for. As you can see in the screenshot you don't need to write down the whole command name, it just need some letters in the correct order.</p>
+
+<h2>Go to anything</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/go-to-anything.png" title="&#34;Looking for a file that I don't remember where it is&#34;" alt="&#34;Looking for a file that I don't remember where it is&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>P</code>
+You don't really need to look that path tree ever again. Just hide it and if you need to edit some file use the <em>go to anything</em> function, write the filename -or just some letters again, remember, smart search- and press enter. There you go, your file with just some key strokes.</p>
+
+<p>You can also use a <code>:</code> or <code>@</code> statement to go directly to a line number or a method! Also, you can use <code>#</code> to search text within the file.</p>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/go-to-anything-2.png" title="&#34;Going to a specified method-line number&#34;" alt="&#34;Going to a specified method-line number&#34;"></p>
+
+<h2>Multiple cursors</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/multiple-cursors.png" title="&#34;Fast refactoring&#34;" alt="&#34;Fast refactoring&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>D</code><br/>
+One of the star features, the multiple cursors. Highlight a word and press the key bind to highlight the next occurrence, when you have all, write to edit all at the same time!</p>
+
+<h2>Split editing</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/split-editing.png" title="&#34;Split editing&#34;" alt="&#34;Split editing&#34;"></p>
+
+<p>ST2 comes with seven layouts: Single, two/three/four columns, two/three rows and four grid. You can change to anyone of this with a key combination, and another one to move the file from one view to another.</p>
+
+<p>For example, in the picture, I used the <em>go to anything</em> to open the file, then pressed <code>CMD</code> + <code>ALT</code> + <code>2</code> to select the two columns view, and then <code>CTRL</code> + <code>SHIFT</code> + <code>2</code> to move the opened file to the second view. May sound complicated but it was like 2 seconds -or less- of key strokes.</p>
+
+<p>I don't know if you can add more layouts or customize the default ones.</p>
+
+<h2>Find with regular expressions</h2>
+
+<p><img class="center no-border" src="http://cdn.fmartingr.com/blog/uploads/2013/01/appsunday-st2/find-regular-expressions.png" title="&#34;Search using regular expressions&#34;" alt="&#34;Search using regular expressions&#34;"></p>
+
+<p><strong>Keybind:</strong> <code>CMD</code> + <code>F</code> to find, then <code>ALT</code> + <code>CMD</code> + <code>R</code> to activate the regular expression search.</p>
+
+<h1>Conclusion</h1>
+
+<p>I've shown you some of the features that make it a very great developing tool. There are much much more, but I can't afford being writing this post for days. Go to <a href="http://www.sublimetext.com/">the SublimeText 2 website</a> to download and give it a try.</p>
+
+<p>Take your first week as a transition one, since it will be different from what you're using right now, unless you're a <em>vi maniac</em>. Explore the features, customize your settings, develop in various languages and then decide. It is worth your skills?</p>
+
+<p>Hope you enjoyed this post! As always, suggestions, bugs, <em>grammar fails</em>, etc to my twitter account or email. Thanks!</p>
+]]></content>
+  </entry>
+  
+</feed>
